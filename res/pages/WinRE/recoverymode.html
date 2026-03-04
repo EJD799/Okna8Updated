@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="recoverymode.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    
+    <script>
+        function addScript(src){
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = false; 
+            document.head.appendChild(script);
+        }
+
+        addScript('../../localization/' + localStorage.getItem('OKNA8_locale') + '/winre.js')
+        addScript('localization.js')
+    </script>
+</head>
+<body style="background-color: rgb(32,103,178);">
+    <div class="section_main">
+        <div class="header">Выбор действия</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()" id="tile-continue">
+                <img src="actionTiles/backtowindows.png" alt="">
+                <h5>Продолжить</h5>
+                <h6>Выход и использование Windows 8.1</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectionusedevice_open_frommain()" id="tile-usedevice">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>Использовать устройство</h5>
+                <h6>USB-устройство, сетевое подключение или DVD-диск восстановления Windows</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectiondiagnostic_open_frommain()" id="tile-diagnostic">
+                <img src="actionTiles/diagnostic.png" alt="">
+                <h5>Диагностика</h5>
+                <h6>Восстановление компьютера, возврат компьютера в исходное состояние или использование дополнительных средств</h6>
+            </div>
+        </div>
+        <div style="top: 120px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="turnoffpcfunc()" id="tile-turnoffpc">
+                <img src="actionTiles/turnoffpc.png" alt="">
+                <h5>Выключить компьютер</h5>
+            </div>
+        </div>
+    </div>
+    <div class="section_diagnostic hidden">
+        <div id="backbtn" onclick="sectionmain_open_fromdiagnostic()" class="backbtn"></div>
+        <div class="header">Диагностика</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="boottowindows()" id="tile-recover">
+                <img src="actionTiles/recovernodataclear.png" alt="">
+                <h5>Восстановить</h5>
+                <h6>Если ваш компьютер работает неправильно, вы можете его восстановить без потери файлов</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="openreset()" id="tile-reset">
+                <img src="actionTiles/resetfactorystate.png" alt="">
+                <h5>Вернуть в исходное состояние</h5>
+                <h6>Ваши файлы будут удалены</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="sectionadvanced_open_fromdiagnostic()" id="tile-advanced">
+                <img src="actionTiles/more.png" alt="">
+                <h5>Дополнительные параметры</h5>
+            </div>
+        </div>
+    </div>
+    <div class="section_advanced hidden">
+        <div id="backbtn" onclick="sectiondiagnostic_open_fromadvanced()" class="backbtn"></div>
+        <div class="header">Дополнительные параметры</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()" id="tile-restorepoint">
+                <img src="actionTiles/recoverypointuse.png" alt="">
+                <h5>Восстановление системы</h5>
+                <h6>Восстановление Windows с помощю точки восстановления</h6>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()" id="tile-image">
+                <img src="actionTiles/fromsystemimage.png" alt="">
+                <h5>Восстановление образа системы</h5>
+                <h6>Восстановление Windows с помощю файла образа системы</h6>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()" id="tile-bootrecover">
+                <img src="actionTiles/bootrecover.png" alt="">
+                <h5>Восстановление при загрузке</h5>
+                <h6>Устранение неполадок, мешающих загрузке Windows </h6>
+            </div>
+        </div>
+        <div style="top: 120px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()" id="tile-cmd">
+                <img src="actionTiles/usecmd.png" alt="">
+                <h5>Командная строка</h5>
+                <h6>Командную строку можно применять для расширенного устранения неполадок</h6>
+            </div>
+        </div>
+        <div style="top: 236px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="openuefifunc()" id="tile-uefi">
+                <img src="actionTiles/uefi.png" alt="">
+                <h5>Параметры встроенного ПО UEFI</h5>
+                <h6>Изменение параметров встроенного ПО UEFI компьютера</h6>
+            </div>
+        </div>
+        <div style="top: 348px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()" id="tile-bootparams">
+                <img src="actionTiles/editbootparameters.png" alt="">
+                <h5>Параметры загрузки</h5>
+                <h6>Настройка параметров загрузки Windows</h6>
+            </div>
+        </div>
+    </div>
+    <div class="section_usedevice hidden">
+        <div id="backbtn" onclick="sectionmain_open_fromusedevice()" class="backbtn"></div>
+        <div class="header">Использовать устройство</div>
+        <div style="top: 120px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>EFI Internal SATA Solid State Drive</h5>
+            </div>
+        </div>
+        <div style="top: 236px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>EFI SATA CD/DVD Drive</h5>
+            </div>
+        </div>
+        <div style="top: 348px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="crash()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>EFI Network</h5>
+            </div>
+        </div>
+        <div style="top: 120px; left:472px;" class="tilecontainer tilecontainer_mainpage">
+            <div class="tile" onclick="bootfromusb()">
+                <img src="actionTiles/usedevice.png" alt="">
+                <h5>EFI USB 3.0 Flash Device</h5>
+            </div>
+        </div>
+    </div>
+    <div class="tilescontainer tilescontainer_mainpage">
+    <div class="blackscreen" style="width: 100vw; height:100vh; position:fixed; top:0; left:0; background-color:black; display:none; opacity:0;"></div>
+    <script src="../../script/jquery.js"></script>
+    <script>
+        function boottowindows () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            setTimeout(function(){
+                window.location.href = '../BIOSnSTART/checkSetupState_andStart.html'
+            },1000);
+        }
+
+        function turnoffpcfunc () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            setTimeout(function(){
+                window.location.href = '../../index.html'
+            },1000);
+        }
+
+        function openuefifunc () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            setTimeout(function(){
+                window.location.href = '../misc/bios/bios.html'
+            },1000);
+        }
+
+        function bootfromusb () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            setTimeout(function(){
+                window.location.href = '../setup/winsetup/boot.html'
+            },1000);
+        }
+
+        function openreset () {
+            $('.blackscreen').css('display','block');
+            $('.blackscreen').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            setTimeout(function(){
+                window.location.href = 'datareset/resetpage.html'
+            },1000);
+        }
+
+        function crash () {
+            window.location.href = '../misc/bsod.html'
+        }
+
+        function sectiondiagnostic_open_frommain () {
+            $('.section_main').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_diagnostic').removeClass('hidden');
+            $('.section_diagnostic').css('opacity','0');
+            setTimeout(function(){
+                $('.section_diagnostic').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_main').addClass('hidden');
+            },200);
+        }
+
+        function sectionmain_open_fromdiagnostic () {
+            $('.section_diagnostic').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_main').removeClass('hidden');
+            $('.section_main').css('opacity','0');
+            setTimeout(function(){
+                $('.section_main').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_diagnostic').addClass('hidden');
+            },200);
+        }
+        function sectiondiagnostic_open_fromadvanced () {
+            $('.section_advanced').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_diagnostic').removeClass('hidden');
+            $('.section_diagnostic').css('opacity','0');
+            setTimeout(function(){
+                $('.section_diagnostic').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_advanced').addClass('hidden');
+            },200);
+        }
+
+        function sectionadvanced_open_fromdiagnostic () {
+            $('.section_diagnostic').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_advanced').removeClass('hidden');
+            $('.section_advanced').css('opacity','0');
+            setTimeout(function(){
+                $('.section_advanced').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_diagnostic').addClass('hidden');
+            },200);
+        }
+
+        function sectionusedevice_open_frommain () {
+            $('.section_main').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_usedevice').removeClass('hidden');
+            $('.section_usedevice').css('opacity','0');
+            setTimeout(function(){
+                $('.section_usedevice').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_main').addClass('hidden');
+            },200);
+        }
+
+        function sectionmain_open_fromusedevice () {
+            $('.section_usedevice').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+            $('.section_main').removeClass('hidden');
+            $('.section_main').css('opacity','0');
+            setTimeout(function(){
+                $('.section_main').css('animation','opacityani 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                $('.section_usedevice').addClass('hidden');
+            },200);
+        }
+    </script>
+</body>
+</html>

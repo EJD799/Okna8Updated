@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../style/main.css">
+    
+    <script>
+        function addScript(src){
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = false; 
+            document.head.appendChild(script);
+        }
+
+        addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/firstboot.js')
+    </script>
+</head>
+<body style="background-color: black;">
+    <section class="nocursor hidden" style="width: 100vw;height:100vh;">
+        <div class="preparingani">
+            <img src="../../../img/boot.png" alt="">
+            <div class="space"></div>
+                <div class='progress-ring ring-2' style="transform: scale(0.6,0.6); opacity:0; animation: opacityani_rev 0s 8s linear forwards;">
+                </div>
+                <div id="text_under_ring"></div>
+        </div>
+    </section>
+    <script src="../../../script/jquery.js"></script>
+    <script src="../../script/metro.js"></script>
+    <script>
+        function onlydataclear () {
+            var oldlocale = localStorage.getItem('OKNA8_locale')
+        setTimeout(function () {
+        $('.nocursor').removeClass('hidden')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 0%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState','crash')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 3%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 7%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 9%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 12%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 17%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 23%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 25%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 32%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 35%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 49%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 57%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 58%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 63%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 67%')
+        setTimeout(function () {
+        localStorage.clear()
+        localStorage.setItem('OKNA8_locale',oldlocale)
+        localStorage.setItem('OKNA8_setupState','crash')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 80%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState','2')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 83%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 84%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 86%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 90%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 98%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState','3')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 100%')
+        setTimeout(function () {
+        $('.nocursor').addClass('hidden');
+        setTimeout(function () {
+        window.location.href = '../../../pages/BIOSnSTART/checkSetupState_andStart.html'
+        },6000);
+        },2000);
+        },3000);
+        },2000);
+        },600);
+        },2400);
+        },1200);
+        },8000);
+        },1000);
+        },1000);
+        },2000);
+        },400);
+        },2200);
+        },240);
+        },4000);
+        },300);
+        },20);
+        },1000);
+        },1000);
+        },3000);
+        },200);
+        },2000);
+        },2000);
+        },10000);
+        },1000);
+        }
+        function cleardrive () {
+        setTimeout(function () {
+        $('.nocursor').removeClass('hidden')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 0%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState','crash')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 3%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 7%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 9%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 12%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 17%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 23%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState','fail')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 25%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 32%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 35%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 49%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 57%')
+        setTimeout(function () {
+        localStorage.setItem('OKNA8_setupState',null)
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 58%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 63%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 67%')
+        setTimeout(function () {
+        localStorage.clear()
+        localStorage.setItem('OKNA8_locale','ru-ru')
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 80%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 83%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 84%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 86%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 90%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 98%')
+        setTimeout(function () {
+        $('#text_under_ring').html(LOCALE_firstboot[6] + ' 100%')
+        setTimeout(function () {
+        $('.nocursor').addClass('hidden');
+        setTimeout(function () {
+        window.location.href = '../../../pages/BIOSnSTART/checkSetupState_andStart.html'
+        },6000);
+        },1000);
+        },1000);
+        },200);
+        },600);
+        },20);
+        },100);
+        },800);
+        },100);
+        },100);
+        },200);
+        },400);
+        },2200);
+        },240);
+        },400);
+        },300);
+        },20);
+        },1000);
+        },500);
+        },2000);
+        },200);
+        },2000);
+        },2000);
+        },10000);
+        },1000);
+        }
+        if (localStorage.getItem('OKNA8_resettype') == 'cleardrive') {
+            cleardrive()
+        } else {
+            onlydataclear()
+        }
+    </script>
+    <style>
+        #text_under_ring {
+            position:fixed;
+            top:calc(50vh + 200px);
+            left:0;
+            width:100vw;
+            font-size: 26px;
+            font-weight: 100;
+            text-align: center;
+            color:white;
+            opacity: 0;
+            animation: opacityani_rev 4s 12s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        }
+        
+        .space {
+            height: 236px;
+        }
+
+        .preparingani {
+            position: fixed;
+            top: 50vh;
+            left: 50vw;
+            margin-top:-190px;
+            margin-left:-62px;
+            opacity: 0;
+            z-index: 2;
+            animation: opacityani_rev 5s 5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        }
+        
+        @keyframes opacityani {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes opacityani_rev {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        html {
+            cursor:url('../../../img/cursorClassic.png'),default;
+        }
+        </style>
+</body>

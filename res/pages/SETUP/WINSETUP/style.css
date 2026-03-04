@@ -1,0 +1,267 @@
+* {
+    user-select: none;
+}
+
+body {
+    background: url(img/setup.png)
+}
+
+#SetupIsStarting {
+    font-family: 'segoe ui';
+    font-size: 28px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom:100px;
+    animation: opacityAniShow 2s 2s linear forwards;
+    opacity: 0;
+}
+
+@keyframes opacityAniShow {
+    0%  {opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.InstallGUI {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;left:0;
+    background: url(img/517.png);
+    display: none
+}
+
+.InstallWindow {
+    width: 672px;
+    height: 511px;
+    background: url(img/516.png);
+    position: fixed;
+    top:calc(50vh - 289px);left:calc(50vw - 336px)
+}
+
+.InstallWindow > .Icon {
+    position: absolute;
+    left:56px;top:26px;
+}
+
+.InstallWindow > .Header {
+    color:rgb(0,2,96);
+    position: absolute;
+    left:80px; top:26px;
+    font-size: 12px;
+    font-family: 'segoe ui';
+    margin: 0
+}
+
+.InstallWindow > .Content {
+    width: 530px; height: 390px;
+    left:20px;top:55px;
+    padding: 20px 44px;
+    position: absolute
+}
+
+.InstallWindow > .Content > h1 {
+    color:rgb(0,51,153);
+    font-size: 16px;
+    font-family: 'segoe ui';
+    font-weight: 400;
+    margin: 0;
+}
+
+.InstallWindow > .Content > p {
+    color:black;
+    font-family: 'segoe ui';
+    font-size: 12px;
+    margin-top:18px;
+}
+
+.InstallWindowClose {
+    width: 59px;
+    height: 34px;
+    background: url(img/506.png);
+    position: absolute;
+    right: 16px; top: 5px;
+    border: none
+}
+
+.InstallWindowClose:hover {
+    background: url(img/510.png)
+}
+
+.InstallWindowClose:active {
+    background: url(img/507.png)
+}
+
+.InstallWindowClose:disabled {
+    background: url(img/509.png)
+}
+
+.InstallWindowBack {
+    width: 31px;
+    height: 31px;
+    background: url(img/501.png);
+    position: absolute;
+    left: 21px; top: 20px;
+    border: none
+}
+
+.InstallWindowBack:hover {
+    background: url(img/505.png)
+}
+
+.InstallWindowBack:active {
+    background: url(img/502.png)
+}
+
+.InstallWindowBack:disabled {
+    background: url(img/504.png)
+}
+
+.Dialog408 {
+    display: none;
+    width: 510px;
+    height: 210px;
+    background: url(img/408.png);
+    position: fixed;
+    top: calc(50vh - 105px);
+    left:calc(50vw - 260px);
+    border-radius: 6px;
+}
+
+.Dialog408 > .InstallWindowClose {
+    right: 0;
+    top:-8px;
+}
+
+.InstallProgress {
+    position: fixed;
+    bottom: 0; right: 0;
+    width: 100vw; height: 66px;
+}
+
+.ProgressbarSection1 {
+    width: 208px;
+    height: 9px;
+    background: rgb(122,147,177);
+    border-top: 1px solid rgb(160,160,160);
+    border-left: 1px solid rgb(160,160,160);
+    border-right: 1px solid rgb(255,255,255);
+    border-bottom: 1px solid rgb(255,255,255);
+}
+
+.ProgressbarSection2 {
+    width: calc(100vw - 214px);
+    height: 9px;
+    position: absolute;
+    left: 212px;
+    top:0;
+    background: rgb(122,147,177);
+    border-top: 1px solid rgb(160,160,160);
+    border-left: 1px solid rgb(160,160,160);
+    border-right: 1px solid rgb(255,255,255);
+    border-bottom: 1px solid rgb(255,255,255);
+}
+
+.ProgressbarFilled {
+    height: 7px;
+    width:0;
+    margin: 1px;
+    background: rgb(153,204,51)
+}
+
+.InstallProgress > h1 {
+    color: white;
+    font-family: 'segoe ui';
+    font-weight: 400;
+    margin: 6px 12px;
+    position: fixed;
+    left:0;
+    bottom: 0
+}
+
+.InstallProgress > h1 > span {
+    font-weight: normal;
+    font-size: 12px;
+    vertical-align: 16px;
+    margin-left: 3px
+}
+
+input {
+    width: 240px;
+    height: 16px;
+    border-top: 2px solid rgb(168,168,168);
+    border-left: 2px solid rgb(168,168,168);
+    border-right: 1px solid rgb(232,232,232);
+    border-bottom: 1px solid rgb(232,232,232);
+    font-size: 12px
+}
+
+input:focus {
+    outline: none;
+}
+
+.DialogBtn {
+    width: 75px;
+    height: 23px;
+    position: absolute;
+    bottom:15px; right:15px;
+    background: url(img/511.png);
+    border: none;
+    font-family: 'segoe ui';
+    font-size: 12px;
+}
+
+.DialogBtn:hover {
+    background: url(img/515.png);
+}
+
+.DialogBtn:active {
+    background: url(img/512.png);
+}
+
+.DialogBtn:disabled {
+    background: url(img/514.png);
+}
+
+input[type=checkbox] {
+    border-top: 2px solid rgb(168,168,168);
+    border-left: 2px solid rgb(168,168,168);
+    border-right: 1px solid rgb(232,232,232);
+    border-bottom: 1px solid rgb(232,232,232);
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: white;
+}
+
+input[type=checkbox]:checked {
+    background-image: url(img/checkbox.png)
+}
+
+label {
+    font-family: 'segoe ui';
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.Progressbar9 {
+    width: 524px;
+    height: 10px;
+    background: rgb(122,147,177);
+    border-top: 1px solid rgb(160,160,160);
+    border-left: 1px solid rgb(160,160,160);
+    border-right: 1px solid rgb(255,255,255);
+    border-bottom: 1px solid rgb(255,255,255);
+    margin-top:24px
+}
+
+.Progressbar9 > .ProgressbarFilled {
+    height:7px;width:0px;
+    animation: Progressbar9ani linear 15s forwards;
+    background-color: rgb(153,204,51);
+}
+
+@keyframes Progressbar9ani {
+    100% {width:521px}
+}

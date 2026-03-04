@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Okna8</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <link rel="stylesheet" href="../style/metroui.css" />
+        <link rel="stylesheet" href="../style/fonts.css" />
+        <script src="../script/jquery.js"></script>
+        <style>
+            body {
+                background-color: rgb(24, 0, 82);
+                font-family: 'segoe ui';
+            }
+
+            h1 {
+                color: white;
+                font-weight: 300;
+            }
+
+            #mobileframe {
+                width: 200vw;
+                height: 200vh;
+                scale: 0.5;
+                transform-origin: left top;
+            }
+
+            #framecontainer {
+                position: fixed;
+                left: -100vw;
+            }
+
+            #logo {
+                width: calc(100vw - 40px);
+                max-width: 400px;
+                margin: 10px;
+            }
+
+            #description {
+                color: white;
+                padding: 0px 10px;
+            }
+
+            a {
+                color: cyan;
+            }
+
+            a:active {
+                color: violet;
+            }
+
+            .preloader {
+                background-color: black;
+                width: 100vw;
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 99999;
+            }
+
+            .preloader .progress-ring {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+            .preloader > p {
+                color: white;
+                margin: 0;
+            }
+        </style>
+        <section class="preloader">
+            <div class="progress-ring">
+                <div class="progress-ring__wrap">
+                    <div class="progress-ring__circle"></div>
+                </div>
+                <div class="progress-ring__wrap">
+                    <div class="progress-ring__circle"></div>
+                </div>
+                <div class="progress-ring__wrap">
+                    <div class="progress-ring__circle"></div>
+                </div>
+                <div class="progress-ring__wrap">
+                    <div class="progress-ring__circle"></div>
+                </div>
+                <div class="progress-ring__wrap">
+                    <div class="progress-ring__circle"></div>
+                </div>
+            </div>
+        </section>
+        <script>
+            $('.preloader').css('height', document.documentElement.clientHeight + 'px')
+            $('body').css('height', document.documentElement.clientHeight + 'px')
+            document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(() => {
+                    $('.preloader').css('display', 'none')
+                }, 1000)
+            })
+        </script>
+    </head>
+    <body>
+        <img id="logo" src="../img/logo3.png" alt="" />
+        <p id="description">
+            Okna8 - симулятор Windows 8.1, работающий в браузере. <br />
+            Проект существует с апреля 2022 года. <br />
+            Автор - <a href="https://youtube.com/c/igor2677">Igor2677</a>
+        </p>
+        <script>
+            var IsLoaded = false
+
+            function OpenFrame() {
+                if (IsLoaded == false) {
+                    document.getElementById('mobileframe').setAttribute('src', '../newloader.html')
+                }
+                IsLoaded = true
+                document.getElementById('framecontainer').requestFullscreen()
+            }
+        </script>
+        <button onclick="OpenFrame()">Пуск!</button>
+        <div id="framecontainer">
+            <iframe id="mobileframe" frameborder="0"></iframe>
+        </div>
+    </body>
+</html>

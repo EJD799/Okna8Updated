@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="../../../style/main.css">
+        <script src="../../../script/jquery.js"></script>
+        <style>
+            #bootscreen {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <iframe src="../../bootscreen.html" frameborder="0" id="bootscreen"></iframe>
+        <script src="../../../script/metro.js"></script>
+        <script>
+            function addScript(src){
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false; 
+                document.head.appendChild(script);
+            }
+
+            if (localStorage.getItem('OKNA8_locale') == null) {
+                localStorage.setItem('OKNA8_locale','ru-ru')
+            }
+
+            addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/firstboot.js')
+            addScript('prepare.js')
+        </script>
+    </body>
+</html>

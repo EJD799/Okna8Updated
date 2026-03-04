@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <div class="preloader" style="background-color: black;width:100vw;height: 100vh;position: fixed;top:0;left:0;z-index: 99999;transition: 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);"></div>
+        <link rel="stylesheet" href="../../style/main.css">
+        <script src="../../script/jquery.js"></script>
+        <script>
+            var currentUser = sessionStorage.getItem('OKNA8_sessionUser')
+        </script>
+        <script src="../../script/metro.js"></script>
+        <link rel="stylesheet" href="../../style/fonts.css">
+        <style>
+            body {
+                margin: 0;
+            }
+
+            div {
+                margin:0;
+                color:white;
+                font-weight: 100;
+                font-size: 24px;
+            }
+
+            .black {
+                width:100vw;
+                height: 100vh;
+                position: fixed;
+                top:0;left:0;
+                animation: blackani 0.5s 1.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards
+            }
+
+            @keyframes blackani {
+                100% {background-color: black}
+            }
+        </style>
+        
+        <script>
+            function addScript(src){
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false; 
+                document.head.appendChild(script);
+            }
+
+            addScript('../../localization/' + localStorage.getItem('OKNA8_locale') + '/shutdown.js')
+            addScript('../../script/localization-shutdown.js')
+
+            localStorage.setItem('OKNA8_DontSkipLockscreen', 'true')
+            sessionStorage.removeItem('OKNA8_sessionUser')
+        </script>
+    </head>
+    <body style="background-color: rgb(24, 0, 82);">
+        <section class="nocursor" style="width: 100vw;height: 100vh; display:flex; align-items: center;justify-content: center">
+            <div id="text">
+                <div class='progress-ring' style="transform: scale(0.7,0.7); display: inline-block">
+                </div>
+                <div id="logoff" style="display: inline-block;position:relative;top:-14px;margin-left:10px"></div>
+            </div>
+        </section>
+        <div class="black"></div>
+        <script>$(document).ready(()=>{$('.preloader').css('opacity','0');setTimeout(function(){window.location.href = '../../newloader.html'}, 2000)})</script>
+        <script src="../../apps/classic/desktop/script/metrocolors.js"></script>
+    </body>
+</html>

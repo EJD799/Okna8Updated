@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html style="background-color: black;">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <script>
+            if (localStorage.getItem('OKNA8_setupState') == '1') {
+                window.location.href = '../../newloader.html'
+            } else if (localStorage.getItem('OKNA8_setupState') == '2') {
+                localStorage.setItem('OKNA8_setupState', '3')
+                window.location.href = '../../newloader.html'
+            } else if (localStorage.getItem('OKNA8_setupState') == '3') {
+                window.location.href = '../../newloader.html'
+            } else if (localStorage.getItem('OKNA8_setupState') == 'fail') {
+                window.location.href = '../setup/WinSetup/boot.html'
+            } else if (localStorage.getItem('OKNA8_setupState') == 'crash') {
+                localStorage.setItem('OKNA8_setupState', null);
+                window.location.href = '../../../pages/misc/bsod.html'
+            } else {
+                window.location.href = '../setup/WinSetup/boot.html'
+            }
+        </script>
+    </head>
+</html>

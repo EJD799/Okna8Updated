@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/icon-font.min.css">
+    <link rel="stylesheet" href="../../style/main.css">
+        <link rel="stylesheet" href="../../style/charmsbar.css">  
+    
+    
+</head>
+<body style="overflow-x: hidden;  background-color: black;">
+    <div class="all" style="margin-top:30px; margin-left:60px; padding-right: 30px;">
+        <table>
+            <tr>
+                <td>
+                    <img src="../../img/logo2.png" alt="">
+                </td>
+                <td>
+                    <h1 style="font-weight: 100; font-size: 80px; color: rgb(0,205, 254);">Okna8</h1>
+                </td>
+            </tr>
+        </table>
+        <p style="font-weight: 100; font-size: 20px; color: white; margin-top: 20px; margin-bottom: 0px;">ПК выключен</p>
+        <a style="margin-top: 30px;" class="startbtn"><div>Запуск!</div></a>
+        <style>
+            .startbtn div {
+                margin-top: 30px; background-color:rgb(24, 24, 24); height: 40px; width: 120px; text-align: center; font-weight: 100; font-size: 24px; color: white;
+                outline: rgb(24, 24, 24) 4px solid;
+                transition: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+            }
+
+            .startbtn div:hover {
+                background-color: rgb(17,17,17);
+            }
+
+            .startbtn div:active {
+                outline: white 4px solid;
+                color: rgb(17,17,17);
+                background-color: white;
+                transform: scale(0.9,0.9);
+            }
+
+            .startani{
+                animation-name: startaniani;
+                animation-fill-mode: forwards;
+                animation-duration: 0.5s;
+                animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            }
+
+            @keyframes startaniani {
+                100% {transform: perspective(300px) rotateY(-60deg) scale(0.2,0.2);}
+            }
+
+            .link1:hover {
+                color: rgb(0,205, 254);
+                text-decoration: none;
+            }
+
+            .link1:active {
+                color: rgb(70, 23, 181);
+            }
+        </style>
+        
+    </div>
+    <script src="../../script/jquery.js"></script>
+    <script>
+        $(function(){
+            $('.startbtn').click(function(){
+                $('.all').addClass('startani');
+                setTimeout(function(){
+                window.location.href = '../../pages/BIOSnSTART/checkSetupState_andStart.html'
+                },100);
+            });
+        });
+    </script>
+</body>

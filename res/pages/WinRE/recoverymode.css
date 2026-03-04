@@ -1,0 +1,78 @@
+html {
+    cursor:url('../../img/cursorClassic.png'),default;
+}
+
+.header {
+    font-size: 46px;
+    font-weight: 100;
+    color: white;
+    position: fixed;
+    top: 28px;
+    left: 144px ;
+}
+
+.backbtn {
+    width: 32px;
+    height: 32px;
+    background-image: url(back.png);
+    position: fixed;
+    left: 80px;
+    top: 48px;
+}
+
+.backbtn:hover {
+    background-image: url(back_hover.png);
+}
+
+.backbtn:active {
+    background-image: url(back_active.png);
+}
+
+.tile img {
+    padding: 8px;
+}
+
+.tile h5 {
+    position: absolute;
+    left: 104px;
+    top:7px;
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 24px;
+}
+
+.tile h6 {
+    position: absolute;
+    left: 104px;
+    top:35px;
+    color: white;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.tile {
+    width: 320px;
+    height: 104px;
+}
+
+.tile:hover {
+    background-color: rgb(61, 123, 188);
+}
+
+.tilecontainer {
+    position: fixed;
+    left: 144px;
+}
+
+@keyframes opacityani {
+    100% {opacity: 1;}
+}
+
+@keyframes opacityani_rev {
+    100% {opacity: 0;}
+}
+
+.tileH6padding {
+    height:21px
+}

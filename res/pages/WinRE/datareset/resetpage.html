@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../../style/bootstrap.min.css">
+        <link rel="stylesheet" href="../../../style/main.css">
+        
+        <script>
+            function addScript(src){
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false; 
+                document.head.appendChild(script);
+            }
+    
+            addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/winre.js')
+            addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/firstboot.js')
+            addScript('localization.js')
+        </script>
+    </head>
+    <body style="background-color: black;">
+        <section class="nocursor" style="width: 100vw;height:100vh;">
+            <div class="preparingani">
+                <img src="../../../img/boot.png" alt="">
+                <div class="space"></div>
+                    <div class='progress-ring ring-2' style="transform: scale(0.6,0.6); opacity:0; animation: opacityani_rev 0s 3.7s linear forwards;">
+                    </div>
+                    <div id="text_under_ring">Подготовка</div>
+            </div>
+        </section>
+        <div class="recoveryscreen hidden">
+            <div id="localization1" style="position: absolute; top:86px; left: 108px; color: white; font-size:10px; font-family:'segoeuil';">
+                Вы хотите полностью очистить свой диск? После очистки диска удалённые файлы будет сложно восстановить. <br>
+                Это повышает безопасность, но занимает намного больше времени.
+            </div>
+            <div id="localization2" class="header">Возврат компьютера в исходное состояние</div>
+            <div style="top: 126px;" class="tilecontainer tilecontainer_mainpage">
+                <div class="tile" onclick="onlydataclear()">
+                    <img src="next.png" alt="">
+                    <h5 id="localization3">Просто удалить мои файлы</h5>
+                    <h6 id="localization4" style="top:42px">Используйте данную возможность, если вы не расстаётесь с компьютером</h6>
+                </div>
+            </div>
+            <div style="top: 210px;" class="tilecontainer tilecontainer_mainpage">
+                <div class="tile" onclick="cleardrive()">
+                    <img src="next.png" alt="">
+                    <h5 id="localization5">Полностью очистить диск</h5>
+                    <h6 id="localization6" style="top:42px;">Используйте данную возможность, если вы утилизируете компьютер. Это займёт несколько часов.</h6>
+                </div>
+            </div>
+        </div>
+        <div class="blackscreen" style="width: 100vw; height:100vh; position:fixed; top:0; left:0; background-color:black; display:none; opacity:0; z-index: 99999;"></div>
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../script/metro.js"></script>
+        <script>
+            function onlydataclear () {
+                $('.blackscreen').css('display','block');
+                $('.blackscreen').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                setTimeout(function(){
+                    window.location.href = 'resetprocess.html'
+                },1000);
+            }
+            function cleardrive () {
+                $('.blackscreen').css('display','block');
+                $('.blackscreen').css('animation','opacityani_rev 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards');
+                setTimeout(function(){
+                    localStorage.setItem('OKNA8_resettype','cleardrive')
+                    window.location.href = 'resetprocess.html'
+                },1000);
+            }
+            setTimeout(function () {
+                $('.preparingani').css('display','none')
+                setTimeout(function () {
+                    $('.recoveryscreen').removeClass('hidden')
+                }, 1000);
+            }, 15000);
+        </script>
+        <style>
+            #text_under_ring {
+                position:fixed;
+                top:calc(50vh + 200px);
+                left:0;
+                width:100vw;
+                font-size: 26px;
+                font-weight: 100;
+                text-align: center;
+                color:white;
+                opacity: 0;
+                animation: opacityani_rev 4s 6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+            }
+        
+            .space {
+                height: 236px;
+            }
+
+            .preparingani {
+                position: fixed;
+                top: 50vh;
+                left: 50vw;
+                margin-top:-190px;
+                margin-left:-62px;
+                opacity: 0;
+                z-index: 2;
+                animation: opacityani_rev 5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+            }
+        
+            @keyframes opacityani {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        
+            @keyframes opacityani_rev {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            html {
+                cursor:url('../../../img/cursorClassic.png'),default;
+            }
+
+            .header {
+                font-size: 30px;
+                font-weight: 100;
+                color: white;
+                position: fixed;
+                top: 36px;
+                left: 108px ;
+            }
+        
+            .recoveryscreen {
+                width: 100vw;
+                height:100vh;
+                position: fixed;
+                left:0;top:0;
+                background-color: rgb(32,103,178);
+            }
+
+            .tile img {
+                padding: 6px;
+            }
+
+            .tile h5 {
+                position: absolute;
+                left: 80px;
+                top:2px;
+                color: white;
+                font-size: 16px;
+                font-weight: 100;
+                line-height: 18px;
+            }
+
+            .tile h6 {
+                position: absolute;
+                left: 80px;
+                top:35px;
+                color: white;
+                font-size: 10px;
+                font-weight: 100;
+            }
+
+            .tile {
+                width: 240px;
+                height: 78px;
+            }
+
+            .tile:hover {
+                background-color: rgb(61, 123, 188);
+            }
+
+            .tilecontainer {
+                position: fixed;
+                left: 102px;
+            }
+        </style>
+    </body>
+</html>

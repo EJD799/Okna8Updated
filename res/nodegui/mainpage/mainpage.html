@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Okna8</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../style/fonts.css">
+        <link rel="stylesheet" href="../../style/metroui.css">
+        <script src="../../script/jquery.js"></script>
+        <script src="../../script/ConnectScript.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <p>Okna8</p>
+            <div class="fullscreenWarning">
+                <div class="contents">
+                    <h1></h1>
+                    <p></p>
+                    <button onclick="HideFullscreenWarning()"></button>
+                </div>
+                <div class="back"></div>
+            </div>
+            <div class="menubar">
+                <div class="element" id="MenuBar-File"></div>
+                <div class="element" id="MenuBar-View"></div>
+                <div class="element" id="MenuBar-Help"></div>
+            </div>
+            <div class="minimize" onclick="ipcRenderer.send('minimize')"></div>
+            <div class="maximize" onclick="ipcRenderer.send('maximize')"></div>
+            <div class="restore" onclick="ipcRenderer.send('restore')"></div>
+            <div class="closebutton" onclick="window.close()"></div>
+        </div>
+        <div class="content">
+            <iframe id="iframe" src="../../../index.html" frameborder="0"></iframe>
+        </div>
+    </body>
+</html>

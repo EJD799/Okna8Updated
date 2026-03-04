@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="../../../script/jquery.js"></script>
+        <script>
+            function addScript(src){var script = document.createElement('script');script.src = src;script.async = false;document.head.appendChild(script);}
+
+            if (localStorage.getItem('OKNA8_locale') == null) {
+                localStorage.setItem('OKNA8_locale','ru-ru')
+            }
+
+            addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/setup/winsetup.js')
+            addScript('script.js')
+        </script>
+    </head>
+    <body>
+        <div class="SetupWin"></div>
+        <div id="SetupIsStarting">
+            Начало установки
+        </div>
+        <div class="InstallGUI" id="InstallGUI">
+            <div class="InstallWindow">
+                <button class="InstallWindowClose" onclick="display408()" id="InstallWindowClose"></button>
+                <button class="InstallWindowBack" disabled></button>
+                <img class="Icon" src="img/287.png">
+                <p class="Header">Установка Windows</p>
+                <div class="Content" id="InstallWindowContent">
+                    <h1>Sample Text</h1>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas odio ullam sunt voluptatem quaerat quis accusamus blanditiis ad assumenda voluptas tenetur laboriosam, cumque fugit aut culpa nisi odit non. Ad.</p>
+                </div>
+            </div>
+            <div class="InstallProgress">
+                <div class="ProgressbarSection1"><div id="Progressbar1filled" class="ProgressbarFilled"></div></div>
+                <div class="ProgressbarSection2"><div id="Progressbar2filled" class="ProgressbarFilled"></div></div>
+                <h1>1 <span>Сбор информации</span></h1>
+                <h1 style="left:190px">2 <span>Установка Windows</span></h1>
+            </div>
+        </div>
+        <div class="Dialog408" id="Dialog408">
+            <button class="InstallWindowClose" onclick="close408()"></button>
+        </div>
+    </body>
+</html>

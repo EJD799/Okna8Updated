@@ -1,0 +1,25 @@
+.content h1 {
+    position: absolute;
+    left:50%; top:30%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 100;
+}
+
+.content h2 {
+    position: absolute;
+    left:50%; top:calc(30% + 50px);
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 100;
+}
+
+.content select {
+    position: absolute;
+    left:50%; top:calc(30% + 120px);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#StartButton {
+    position: absolute;
+    left:50%; top:calc(30% + 180px);
+    transform: translateX(-50%) translateY(-50%);
+}

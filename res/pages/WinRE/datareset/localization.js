@@ -1,0 +1,9 @@
+$(document).ready(()=>{
+    $('#localization1').html(LOCALE_winre[29])
+    $('#localization2').html(LOCALE_winre[30])
+    $('#localization3').html(LOCALE_winre[31])
+    $('#localization4').html(LOCALE_winre[32])
+    $('#localization5').html(LOCALE_winre[33])
+    $('#localization6').html(LOCALE_winre[34])
+    $('#text_under_ring').html(LOCALE_firstboot[5])
+})

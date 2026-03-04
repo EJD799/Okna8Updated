@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Okna8</title>
+        <style>
+            #bootscreen {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: black;
+            }
+        </style>
+        <title>Okna8</title>
+    </head>
+    <body>
+        <iframe src="../bootscreen.html" frameborder="0" id="bootscreen"></iframe>
+        <script>
+            setTimeout(() => {
+            document.getElementById('bootscreen').contentWindow.postMessage('DisplayRing', '*')
+                setTimeout(()=>{
+                    document.getElementById('bootscreen').contentWindow.postMessage('HideBootscreen', '*')
+                    setTimeout(() => {
+                        window.location.href = "../../newloader.html"
+                    }, 1000)
+                }, 4000)
+            }, 1000)
+
+            if (localStorage.getItem('OKNA8_Crashes') == null) {
+                localStorage.setItem('OKNA8_Crashes', '1')
+            } else if (localStorage.getItem('OKNA8_Crashes') == '1') {
+                localStorage.setItem('OKNA8_Crashes', '2')
+            } else if (localStorage.getItem('OKNA8_Crashes') == '2') {
+                localStorage.setItem('OKNA8_Crashes', '3')
+            } else if (localStorage.getItem('OKNA8_Crashes') == '3') {
+                localStorage.removeItem('OKNA8_Crashes')
+                window.location.href = "../WinRE/AutoRecovery.html"
+            }
+        </script>
+    </body>
+</html>

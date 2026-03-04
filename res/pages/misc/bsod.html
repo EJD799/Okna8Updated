@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../style/bootstrap.min.css">
+        <link rel="stylesheet" href="../../style/main.css">
+        <script src="../../script/jquery.js"></script>
+        <script>
+            setTimeout(function(){
+                window.location.href = '../../pages/BIOSnSTART/checkSetupState_andStart.html';
+            }, 5000);
+
+            function addScript(src){
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false; 
+                document.head.appendChild(script);
+            }
+
+            addScript('../../localization/' + localStorage.getItem('OKNA8_locale') + '/bsod.js')
+            addScript('../../script/bsod.js')
+        </script>  
+    </head>
+    <body style="background-color: rgb(31, 103, 176)">
+        <section class="nocursor" style="width: 100vw; height: 100vh;">
+            <div id="bsodText" style="position:absolute;top: 50%; left: 50%; transform:translate(-50%, -50%)"></div>
+        </section>
+    </body>
+</html>

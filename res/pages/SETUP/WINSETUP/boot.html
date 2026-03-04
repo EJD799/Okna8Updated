@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Okna8</title>
+        <style>
+            #bootscreen {
+                width: 100vw;
+                height: 100vh;
+            }
+
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: black;
+            }
+        </style>
+        <title>Okna8</title>
+    </head>
+    <body>
+        <iframe src="../../bootscreen.html" frameborder="0" id="bootscreen"></iframe>
+        <script>
+            setTimeout(() => {
+            document.getElementById('bootscreen').contentWindow.postMessage('DisplayRing', '*')
+                setTimeout(()=>{
+                    document.getElementById('bootscreen').contentWindow.postMessage('HideBootscreen', '*')
+                    setTimeout(() => {
+                        window.location.href = "setup.html"
+                    }, 1000)
+                }, 6000)
+            }, 4000)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+body {
+    background-color: rgb(30,30,30);
+    color: white;
+    margin: 0;
+    border: 1px solid rgb(70,70,70);
+    height: calc(100vh - 2px);
+    overflow: hidden;
+}
+
+.content {
+    width: calc(100vw - 8px);
+    height: calc(100vh - 34px);
+    background-color: rgb(27,27,27);
+    position: fixed;
+    top: 30px; left: 4px;
+}
+
+.header {
+    width: 100vw;
+    height: 30px;
+    -webkit-app-region: drag;
+}
+
+.header > p {
+    font-size: 16px;
+    margin: 4px 8px;
+}
+
+.header > .closebutton {
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    right: 0; top: 0;
+    -webkit-app-region: no-drag;
+    background-image: url(../img/close.png);
+}
+
+.header > .closebutton:hover {
+    background-color: rgb(160, 0, 0);
+}
+
+.header > .closebutton:active {
+    background-color: rgb(220, 0, 0);
+}
+
+.header > .maximize {
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    right: 40px; top: 0;
+    -webkit-app-region: no-drag;
+    background-image: url(../img/maximize.png);
+}
+
+.header > .maximize:hover {
+    background-color: rgb(0, 43, 160);
+}
+
+.header > .maximize:active {
+    background-color: rgb(0, 7, 220);
+}
+
+.header > .restore {
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    right: 40px; top: 0;
+    -webkit-app-region: no-drag;
+    background-image: url(../img/restore.png);
+    display: none;
+}
+
+.header > .restore:hover {
+    background-color: rgb(0, 43, 160);
+}
+
+.header > .restore:active {
+    background-color: rgb(0, 7, 220);
+}
+
+.header > .minimize {
+    width: 40px;
+    height: 30px;
+    position: fixed;
+    right: 80px; top: 0;
+    -webkit-app-region: no-drag;
+    background-image: url(../img/minimize.png);
+}
+
+.header > .minimize:hover {
+    background-color: rgb(0, 43, 160);
+}
+
+.header > .minimize:active {
+    background-color: rgb(0, 7, 220);
+}
+
+.content > iframe {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border: 1px solid rgb(60,60,60);
+    background-color: black;
+}
+
+body.maximized .content {
+    width: 100vw;
+    height: calc(100vh - 30px);
+    left: 0;
+}
+
+body.maximized .content iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+body.maximized {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+body.fullscreen .content iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+body.fullscreen {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+body.fullscreen .content {
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left: 0;
+}
+
+body.fullscreen .menubar {
+    display: none;
+}
+
+.menubar {
+    height: 30px;
+    position: fixed;
+    left:80px;
+    top:0;
+}
+
+.menubar .element {
+    padding: 6px 10px;
+    -webkit-app-region: no-drag;
+    user-select: none;
+    transition: 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+    display: inline-block;
+    font-size: 14px;
+}
+
+.menubar .element:hover {
+    background-color: rgba(50,50,50,0.5);
+}
+
+.menubar .element:active {
+    background-color: rgba(60,60,60,0.5);
+}
+
+.fullscreenWarning {
+    width: 100vw;
+    height: 180px;
+    background-color: rgb(24,0,82);
+    color: white;
+    position: fixed;
+    top:0;left:0;
+    opacity: 0;
+    animation: fullscreenwarningshow 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    z-index: 99999;
+    display: none;
+}
+
+.fullscreenWarning .contents {
+    width: 640px;
+    position: absolute;
+    left: calc(50% - 320px);
+}
+
+.fullscreenWarning h1 {
+    margin: 0px;
+    margin-top: 20px;
+    font-weight: lighter;
+}
+
+.fullscreenWarning p {
+    margin: 0px;
+    margin-top: 4px;
+}
+
+.fullscreenWarning button {
+    position: absolute;
+    right: 0;
+    top: 130px
+}
+
+@keyframes fullscreenwarningshow {
+    0% {transform: translateY(-50px); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes fullscreenwarninghide {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-50px); opacity: 0;}
+}
+
+.fullscreenWarning .back {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    left:0;top:180px;
+}
