@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Okna8</title>
+        <link rel="shortcut icon" href="img/okna16.ico" type="image/x-icon">
+        <script src="script/jquery.js"></script>
+    </head>
+
+    <body style="background-color: black">
+        <div class="bootscreen">
+            <iframe id="BootFrame"></iframe>
+            <p id="console">Okna8<br /></p>
+        </div>
+        <style>
+            .bootscreen {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                left: 0;
+                top: 0;
+                background-color: black;
+                z-index: 99999;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .bootscreen iframe {
+                width: 1024px;
+                height: 768px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                border: none;
+            }
+
+            .bootscreen p#console {
+                font-family: 'Courier New', Courier, monospace;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                color: white;
+                display: none;
+            }
+        </style>
+        <script>
+                    function log(data) {
+                        $('#console').append(data + '<br>')
+                        console.log(data)
+                    }
+                    var addScript = (src, id) =>
+                        new Promise(async (resolve, reject) => {
+                            log('Loading script ' + src)
+                            let i = document.createElement('script')
+                            i.src = src
+                            if (id) i.id = id
+                            document.body.append(i)
+                            i.onload = resolve
+                            i.onerror = reject
+                        })
+                    var addStyles = (src, id) =>
+                        new Promise(async (resolve, reject) => {
+                            log('Loading styles ' + src)
+                            let i = document.createElement('link')
+                            i.rel = 'stylesheet'
+                            i.href = src
+                            if (id) i.id = id
+                            document.body.append(i)
+                            i.onload = resolve
+                            i.onerror = reject
+                        })
+
+                    var winload = async function () {
+                        await addScript('ver.js')
+                        await addScript('ConfigPC.js')
+                        await addScript('../mods/config.js')
+                        await addStyles('style/main.css')
+                        await addStyles('style/fonts.css')
+                        document.getElementById('BootFrame').contentWindow.postMessage('DisplayRing', '*')
+                        await addScript('script/WindowsManager.js')
+                        await addStyles('style/windowsmanager.css')
+                        await addScript('script/axios.js')
+                        await addScript('script/metro.js')
+                        await addScript('script/Audio.js')
+                        await addScript('script/OnlineAccount.js')
+                        if (localStorage.getItem('OKNA8_setupState') == '3' || localStorage.getItem('OKNA8_users') == null || localStorage.getItem('OKNA8_users') == undefined || localStorage.getItem('OKNA8_users') == '') {
+                            addScript('apps/classic/oobe/oobeldr.js')
+                        } else if (localStorage.getItem('OKNA8_setupState') == '1') {
+                            addScript('apps/classic/desktop/desktophtml.js')
+                        }
+                    }
+                    window.onload = () => {
+                        document.getElementById('BootFrame').setAttribute('src', 'pages/bootscreen.html')
+                        setTimeout(winload, 100)
+                    }
+        </script>
+    </body>
+</html>
