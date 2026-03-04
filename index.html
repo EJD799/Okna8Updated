@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html style="background-color: black">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link rel="stylesheet" href="res/style/fonts.css" />
+        <link rel="stylesheet" href="res/style/main.css" />
+        <link rel="stylesheet" href="res/style/metroui.css" />
+        <link rel="stylesheet" href="res/style/index.html.css" />
+        <link rel="shortcut icon" href="res/img/okna16.ico" type="image/x-icon">
+        <script src="res/script/jquery.js"></script>
+        <script src="res/script/snowfall.js"></script>
+        <script src="res/ver.js"></script>
+        <script src="res/script/ConnectScript.js"></script>
+        <title>Okna8</title>
+    </head>
+    <body>
+        <div class="welcome">
+            <div class="content"></div>
+        </div>
+        <script>
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                window.location.href = "res/pages/mobile.html"
+            }
+
+            if (localStorage.getItem('OKNA8_locale') == null) {
+                ConnectScript('res/script/index.html.langselect.js')
+            } else {
+                ConnectScript('res/localization/' + localStorage.getItem('OKNA8_locale') + '/index.html.js')
+                ConnectScript('res/script/index.html.js')
+            }
+        </script>
+        <div class="AppSplashContainerV2">
+            <div class="SplashV2" style="background-color: black"><iframe src="res/pages/bootscreen.html" style="width: 100%; height: 100%" frameborder="0"></iframe></div>
+        </div>
+    </body>
+</html>
