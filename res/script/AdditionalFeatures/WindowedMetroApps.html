@@ -1,0 +1,16 @@
+<script src="../../script/WindowsCommunication.js"></script>
+<script>
+    window.addEventListener('message', function (event) {
+    if (event.data.startsWith('YourID-')) {
+        WindowID = Number(event.data.replace('YourID-', ''))
+    } else if (event.data.startsWith('Arguments-')) {
+        var Args = JSON.parse(event.data.substring(10))
+        sendToTop('SetWindowHeader' + WindowID + '|' + Args['title'])
+        sendToTop('SetWindowIcon' + WindowID + '|' + 'apps/classic/desktop/' + Args['path'] + '/AppLogo.png')
+        sendToTop(`eval>
+            $('#Window_${WindowID} .content').attr('id', 'metrowindow_${Args['appname']}')
+        `)
+        window.location.href = '../../apps/classic/desktop/' + Args['path'] + '/index.html'
+    }
+})
+</script>
