@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(24, 0, 82);
+    color: white;
+    margin: 0;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(27, 27, 27);
+}
+
+.app section {
+    padding: 60px 120px;
+    width: calc(100vw - 240px);
+    height: calc(100vh - 120px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+section#mainpage {
+    display: block;
+}
+
+.scrollblock {
+    width: calc(100% - 240px);
+    height: calc(100% - 80px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 40px 120px 40px 120px;
+    display: flex;
+    overflow-x: auto;
+}
+
+section.WithHeader .scrollblock {
+    height: calc(100% - 194px);
+    padding: 0px 120px 40px 120px;
+    top: 154px
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 100;
+    margin: 20px 0;
+}
+
+.scrollblock .block {
+    height: 100%;
+    margin-right: 60px;
+    font-size: 16px;
+    min-width: 500px;
+    max-width: 500px;
+}
+
+.scrollblock .block:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.scrollblock .block p {
+    text-align: justify;
+}
+
+.list {
+    width: 100%;
+}
+
+.list .elem {
+    height: 40px;
+    width: calc(100% - 8px);
+    padding: 4px;  
+    position: relative;
+    transition: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.list .elem:nth-child(odd) {
+    background-color: rgba(50,50,50,0.2);
+}
+
+.list .elem:hover {
+    background-color: rgba(120,120,120,0.2);
+}
+
+.list .elem:active {
+    scale: 0.99;
+}
+
+.errormsg {
+    color: rgb(221, 183, 11);
+}
