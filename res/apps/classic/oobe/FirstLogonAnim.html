@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link rel="stylesheet" href="../../../style/fonts.css" />
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script>
+            var WindowID
+            var LOCALE_winver = []
+
+            window.addEventListener('message', function (event) {
+                if (event.data.startsWith('YourID-')) {
+                    WindowID = Number(event.data.replace('YourID-', ''))
+                    sendToTop('eval>OOBE_FirstLogonAnimToTop(' + WindowID + ')')
+                }
+            })
+        </script>
+        <style>
+            body {
+                background-color: black;
+                transition: 5s linear;
+                cursor: none;
+            }
+
+            .centraltext {
+                color: white;
+                font-weight: 100;
+                font-size: 56px;
+                position: fixed;
+                top: 50vh;
+                transform: translateY(-50%);
+                left: 0;
+                text-align: center;
+                width: 100%;
+                transition: 1s cubic-bezier(0.1, 0.9, 0.2, 1);
+                opacity: 0;
+                font-weight: lighter;
+            }
+
+            .bottomtext {
+                color: white;
+                font-weight: 100;
+                font-size: 28px;
+                position: fixed;
+                bottom: 40px;
+                text-align: center;
+                width: 100%;
+                transition: 1s cubic-bezier(0.1, 0.9, 0.2, 1);
+                opacity: 0;
+            }
+
+            .starting {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 99999;
+                transition: 1s cubic-bezier(0.1, 0.9, 0.2, 1);
+                opacity: 0;
+                background-color: rgb(24, 0, 82);
+            }
+
+            .startingtext {
+                color: white;
+                font-weight: 100;
+                font-size: 56px;
+                position: fixed;
+                top: 50vh;
+                transform: translateY(-50%);
+                text-align: center;
+                width: 100%;
+            }
+        </style>
+        <script src="../../../script/jquery.js"></script>
+    </head>
+
+    <body>
+        <div class="centraltext">Привет</div>
+        <div class="bottomtext">Подождите</div>
+        <div class="starting">
+            <div class="startingtext"></div>
+        </div>
+        <script>
+            addScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/firstlogonanim.js').then(() => {
+                addScript('FirstLogonAnim.js')
+            })
+        </script>
+    </body>
+</html>

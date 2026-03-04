@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/metroui.css">
+        <link rel="stylesheet" href="oobe.css">
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../../script/metro.js"></script>
+        <script src="../../../ver.js"></script>
+    </head>
+    <body>
+        <section id="OOBE_Page1">
+            <h1></h1>
+            <h2>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </h2>
+        </section>
+        <section id="OOBE_Page2">
+            <h1></h1>
+            <p class="selectcolor"></p>
+            <div class=ColorSelect>
+                <input type="range" min="0" max="24" value="18" oninput="ChangeColor()" class="ColorSelectInput">
+            </div>
+            <p class="pcname"></p>
+            <input maxlength="32" id="InputPcName" type="text" onkeyup="checkInput('#InputPcName')" placeholder="" autocomplete="off">
+            <div class="buttons">
+                <button onclick="DisplayPage3()"></button>
+            </div>
+        </section>
+        <section id="OOBE_Page3">
+            <h1></h1>
+            <h2></h2>
+            <p class="textUseStandart"></p>
+            <ul>
+                
+            </ul>
+            <div class="buttons"><!--<button class="EditSettings" onclick="EditSettings()"></button>--><button class="UseStandart" onclick="UseStandartSettings()"></button></div>
+        </section>
+        <section id="OOBE_Page4">
+            <h1></h1>
+            <p class="ifyouwantapassword"></p>
+            <table>
+                <tr>
+                    <td><p></p></td>
+                    <td><input autocomplete="off" onkeyup="checkInput('#InputUsername')" id="InputUsername" type="text"></td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                    <td><input autocomplete="off" type="password" onkeyup="checkInput('#InputPassword')" id="InputPassword" type="text"></td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                    <td><input autocomplete="off" type="password" onkeyup="checkInput('#InputPasswordRetry')" id="InputPasswordRetry" type="text"></td>
+                </tr>
+                <tr>
+                    <td><p></p></td>
+                    <td><input autocomplete="off" type="text"></td>
+                </tr>
+            </table>
+            <div class="buttons">
+                <button onclick="FinishOOBE()"></button>
+            </div>
+        </section>
+        <section id="OOBE_Page5">
+            <h2 style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-60px);white-space: nowrap;"><div id="spinner" class='progress-ring' style="transform: scale(0.7);display: inline-block;margin-right: 10px; margin-bottom: -10px;"></div><span></span></h2>
+        </section>
+        <section id="OOBE_Page6">
+            <h1>Параметры</h1>
+            <p>Вы подключились к сети. Вы хотите найти в ней компьютеры, устройства и содержимое, а также автоматически подключиться к принтерам и телевизорам?</p>
+            <button onclick="DisplayPage7(true)">
+                <p>Да</p>
+                <p>Для домашних или рабочих сетей</p>
+            </button>
+            <button onclick="DisplayPage7()">
+                <p>Нет</p>
+                <p>Для сетей в общественных местах</p>
+            </button>
+        </section>
+        <section id="OOBE_Page7">
+            <h1>Параметры</h1>
+            <h2>Обновление компьютера и приложений</h2>
+            <p>Центр обновления Windows</p>
+            <select name="" id="">
+                <option value="1">Автоматически устанавливать важные и рекомендуемые обновления</option>
+                <option value="2">Автоматически устанавливать важные обновления</option>
+                <option value="3">Не настраивать Центр обновления Windows (не рекомендуется)</option>
+            </select>
+            <p>Автоматически получать драйверы, приложения и данные для новых устройств</p>
+        </section>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="oobe.js"></script>
+    </body>
+</html>

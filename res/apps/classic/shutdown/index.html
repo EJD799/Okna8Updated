@@ -1,0 +1,19 @@
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+<script src="../../../script/WindowsCommunication.js"></script>
+<script>
+    var WindowID
+
+    window.addEventListener('message', function (event) {
+        if (event.data.startsWith('YourID-')) {
+            WindowID = Number(event.data.replace('YourID-', ''))
+            sendToTop('SetWindowHeader' + WindowID + '|' + 'shutdown')
+            sendToTop('SetWindowIcon' + WindowID + '|' + 'img/shell/icons/cmd.png')
+        } else if (event.data.startsWith('Arguments-')) {
+            sendToTop('eval>shutdown("' + event.data.substring(10) + '")')
+        }
+    })
+</script>

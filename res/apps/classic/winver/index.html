@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <style>
+            html,body {
+                background-color: rgb(240,240,240);
+                margin:0
+            }
+            p {
+                margin: 2px 50px;
+            }
+        </style>
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/shellstyle.css">
+        <script src="../../../script/JQuery.js"></script>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="../../../ver.js"></script>
+        <script src="../../../script/ConnectScript.js"></script>
+        <script>      
+            var WindowID
+            var LOCALE_winver = []
+            
+            ConnectScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/winver.js')
+            ConnectScript('localization.js')
+
+            window.addEventListener('message', function (event) {
+                if (event.data.startsWith('YourID-')) {
+                    setTimeout(() => {
+                        WindowID = Number(event.data.replace('YourID-', ''))  
+                        sendToTop('SetWindowHeader' + WindowID + '|' + LOCALE_winver[2]) 
+                    }, 200);     
+                }
+            })
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

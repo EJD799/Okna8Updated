@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Проводник</title>
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/shellstyle.css">
+        <link rel="stylesheet" href="explorer.css">
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../../ver.js"></script>
+        <script src="../../../script/ConnectScript.js"></script>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="ribbon.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="menubar">
+            <div class="elementfile" id="menubarElement-file">Файл <div></div></div>
+            <div class="element" id="menubarElement-computer">Компьютер <div></div></div>
+            <div class="element" id="menubarElement-view">Вид <div></div></div>
+            <div id="RibbonOnOff"><div></div></div>
+        </div>
+        <div class="ribbon">
+            <div class="ribbonContent" id="RibbonContent-computer">computer</div>
+            <div class="ribbonContent" id="RibbonContent-view">view</div>
+        </div>
+        <div class="explorercontent">
+            <div class="top">
+                <input type="text" id="AdressInput" value="Этот компьютер">
+                <input type="text" id="SearchInput" placeholder="Поиск">
+                <img id="SearchIcon" src="../../../img/shell/908.png" alt="">
+            </div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+    </body>
+</html>

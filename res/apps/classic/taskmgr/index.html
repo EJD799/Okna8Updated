@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Диспетчер задач</title>
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/shellstyle.css">
+        <link rel="stylesheet" href="../../../style/windowProperties.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../../ver.js"></script>
+        <script src="../../../script/ConnectScript.js"></script>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="../../../script/Windows/WindowProperties.js"></script>
+    </head>
+    <body>
+        <div class="menubar">
+            <div class="element" id="MenuBarElement_file" onclick="MenuBar('file')">Файл</div>
+            <div class="element" id="MenuBarElement_settings" onclick="MenuBar('settings')">Параметры</div>
+            <div class="element" id="MenuBarElement_view" onclick="MenuBar('view')">Вид</div>
+        </div>
+        <div class="properties-tabs">
+            <div class="tab activetab" id="properties_tab_additional"><span></span>Подробности</div>
+            <div class="tab" id="properties_tab_autostart"><span></span>Автозагрузка</div>
+        </div>
+        <div class="properties-content" style="display: block" id="properties-content_additional">
+            <div class="processListHeader">
+                <table>
+                    <tr>
+                        <td><p>Имя</p></td>
+                        <td><p>ИД процесса</p></td>
+                        <td><p>Описание</p></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="processList">
+            </div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="bottombar"><button onclick="KillProcess()">Снять задачу</button></div>
+        </div>
+        <script>
+            var WindowID
+
+            window.addEventListener('message', function (event) {
+                if (event.data.startsWith('YourID-')) {
+                    WindowID = Number(event.data.replace('YourID-', ''))
+                    if (localStorage.getItem('OKNA8_TaskMgr_DisplayOnTop') == 1) {
+                        sendToTop("eval>ZIndexExceptions.push('" + WindowID + "');document.getElementById('Window_" + WindowID + "').style.zIndex = 99999")
+                    }
+                    sendToTop('SetWindowHeader' + WindowID + '|' + $('title').html())  
+                    sendToTop('SetWindowIcon' + WindowID + '|' + 'apps/classic/taskmgr/taskmgr.png')
+                    ConnectScript('MenuBar.js')
+                    ConnectScript('script.js')
+                }
+            })
+
+            function killWindow () {
+                sendToTop('KillWindow_' + WindowID)
+            }
+        </script>
+    </body>
+</html>

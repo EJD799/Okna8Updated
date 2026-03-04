@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    background-image: url(../../../img/analogclock/5000.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.clock {
+    display: inline-block;
+    border-radius: 0.5em;
+    position: relative;
+    font-size: 250px;
+    overflow: hidden;
+    height: 1em;
+    width: 1em;
+}
+.clock::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 0.5em;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    position: absolute;
+    font-size: 0.01em;
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: 50%;
+    top: 50%;
+}
+.clock__hand-container, .clock__hand, .clock__stroke {
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 1em;
+    width: 1em;
+    left: 50%;
+    top: 50%;
+}
+
+.clock__hand--hour::after {
+    content: "";
+    border-radius: 0.015em 0.015em 0.01em 0.01em;
+    background-color: #000;
+    margin-bottom: -0.02em;
+    margin-left: 0.005em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.25em;
+    width: 0.01em;
+    bottom: 50%;
+    left: 50%;
+}
+.clock__hand--minute::after {
+    content: "";
+    border-radius: 0.012em 0.012em 0.01em 0.01em;
+    background-color: #000;
+    margin-bottom: -0.02em;
+    margin-left: 0.005em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.4em;
+    width: 0.01em;
+    bottom: 50%;
+    left: 50%;
+}
+.clock__hand--second::after {
+    content: "";
+    border-radius: 0.01em 0.01em 0.005em 0.005em;
+    background-color: #000;
+    margin-bottom: -0.02em;
+    margin-left: -0.005em;
+    font-size: inherit;
+    position: absolute;
+    display: block;
+    height: 0.46em;
+    width: 0.01em;
+    bottom: 40%;
+    left: 50%;
+}

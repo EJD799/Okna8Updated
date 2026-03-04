@@ -1,0 +1,264 @@
+* {
+    user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+    animation: BackgroundColorAnimation 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes BackgroundColorAnimation {
+    0% {background-color: black;}
+    100% {background-color: rgb(24, 0, 82);}
+}
+
+section {
+    width: 814px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    display: none;
+    animation: Page_SectionAni 0.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+section > h1 {
+    font-size: 56px;
+    font-weight: 100;
+    color: white;
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+section > h2 {
+    font-size: 28px;
+    font-weight: 100;
+    color: white;
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+section > ul li {
+    color: white;
+    font-weight: 200;
+}
+
+section > p {
+    color: white;
+    letter-spacing: -0.2px;
+    font-weight: 200;
+}
+
+#OOBE_Page1 {
+    white-space: nowrap;
+    animation: Page1_SectionAni 0.4s 2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    display: block;
+}
+
+#OOBE_Page1 > h1 {
+    font-size: 16px;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    animation: Page1_H1Ani 0.5s 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    top: 50%;
+    transform: translateY(calc(-50% - 30px));
+}
+
+#OOBE_Page1 > h2 {
+    font-size: 28px;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#OOBE_Page1 > h2 > span {
+    margin-right: 50px;
+    opacity: 0;
+    font-weight: 100;
+}
+
+#OOBE_Page1 > h2 > span:nth-child(1) {
+    animation: Page1_SpanAni 0.4s 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+#OOBE_Page1 > h2 > span:nth-child(2) {
+    animation: Page1_SpanAni 0.4s 0.55s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+#OOBE_Page1 > h2 > span:nth-child(3) {
+    animation: Page1_SpanAni 0.4s 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+#OOBE_Page1 > h2 > span:nth-child(4) {
+    animation: Page1_SpanAni 0.4s 0.65s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes fadeani {
+    100% {opacity: 0;}
+}
+
+@keyframes fadeanirev {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes Page1_SpanAni {
+    0% {opacity: 0; padding-left: 50px;}
+    100% {opacity: 1; padding-left: 0px;}
+}
+
+@keyframes Page1_H1Ani {
+    0% {opacity: 0; padding-left: 20px;}
+    100% {opacity: 1; padding-left: 0px;}
+}
+
+@keyframes Page1_SectionAni {
+    0% {opacity: 1; margin-left: 0px;}
+    100% {opacity: 0; margin-left: -150px;}
+}
+
+@keyframes Page_SectionAni {
+    0% {opacity: 0; margin-left: 20px;}
+    100% {opacity: 1; margin-left: 0px;}
+}
+
+@keyframes Page_SectionHideAni {
+    0% {opacity: 1; margin-left: 0px;}
+    100% {opacity: 0; margin-left: -20px;}
+}
+
+.ColorSelect {
+    width: 752px;
+    height: 76px;
+    background-image: url(../../../img/OOBE/4804.png);
+}
+
+.ColorSelectInput {
+    background-position: center;
+    width: 750px;
+    height: 76px;
+    appearance: none;
+    background:none;
+    margin-left: 1px;
+}
+
+.ColorSelectInput::-webkit-slider-thumb {
+    appearance: none;
+    width: 30px;
+    height: 76px;
+    background-image: url(../../../img/OOBE/4805.png);
+    transition: 0.5s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+input[type='text'], input[type='password'] {
+    width: 280px;
+    height: 32px;
+    background-color: rgba(255,255,255, 0.8);
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0px 8px;
+}
+
+input[type='text']:hover, input[type='password']:hover {
+    background-color: rgba(255,255,255, 0.9);
+}
+
+input[type='text']:focus, input[type='password']:focus {
+    background-color: white;
+}
+
+section > .buttons {
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: 55px;
+}
+
+section > .buttons > button {
+    float: right;
+}
+
+#OOBE_Page4 table p{
+    color: white
+}
+
+#OOBE_Page4 table input {
+    margin-left: 20px;
+}
+
+#OOBE_Page3 ul {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    width: 780px;
+    opacity: 0;
+}
+
+#OOBE_Page3 h2 {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page3 p {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+    width: 780px;
+}
+
+#OOBE_Page2 p {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page2 input[type="text"] {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page2 .ColorSelect {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page6 p {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page6 button {
+    margin-bottom: 18px;
+    display: block;
+    margin-left: 0;
+    text-align: left;
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page6 button p {
+    margin: 0;
+}
+
+#OOBE_Page6 button p:nth-child(1) {
+    font-weight: 600;
+}
+
+#OOBE_Page4 p {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+#OOBE_Page4 table {
+    animation: Page_SectionAni 0.2s 0.1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    opacity: 0;
+}

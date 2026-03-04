@@ -1,0 +1,1 @@
+$('body').html(LOCALE_winver[1])

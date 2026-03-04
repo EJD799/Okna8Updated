@@ -1,0 +1,513 @@
+.lock {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10002;
+    background-color: rgb(100,100,100);
+    background-image: url(../../../img/wallpaper/lock/img100.png);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    transition: 0.6s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.clock {
+    position: absolute;
+    bottom: 161px;
+    left: 74px;
+    font-size: 140px;
+    color: white;
+    font-weight: 100;
+}
+
+.date {
+    position: absolute;
+    bottom: 110px;
+    left: 82px;
+    font-size: 55px;
+    color: white;
+    font-weight: 100;
+}
+
+.selectuser {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    background-color: rgb(24, 0, 82)
+}
+
+.selectuser .userslist {
+    width: 60vw;
+    height: 60vh;
+    position: fixed;
+    left: 20vw;
+    top: 30vh;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.selectuser .usercontainer {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 244px;
+    transition: 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+    margin: 8px;
+}
+
+.selectuser .usercontainer:active {
+    transform: scale(0.95);
+}
+
+.selectuser .usercontainer .useravatar {
+    box-shadow: inset 0px 0px 0px 1px rgba(200, 200, 200, 0.2);
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+    box-sizing: unset;
+    transition: 0.1s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.selectuser .usercontainer .useravatar:hover {
+    box-shadow: inset 0px 0px 0px 4px rgba(200, 200, 200, 0.4);
+}
+
+.selectuser .usercontainer .username_s {
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
+}
+
+.usercontainer .username_s, .usercontainer .username_l {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    overflow-x: hidden;
+}
+
+.usercontainer .username_l {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    overflow-x: hidden;
+}
+
+.selectuser .usercontainer .username_l {
+    opacity: 0;
+}
+
+.selectuser .usercontainer .welcomering {
+    display: none;
+}
+
+.selectuser .usercontainer .welcometext {
+    display: none;
+}
+
+.selectuser .usercontainer .email {
+    display: none;
+}
+
+.selectuser .usercontainer input {
+    display: none;
+}
+
+.selectuser .usercontainer .passwordEnterButton {
+    display: none;
+}
+
+.selectuser .usercontainer .exitToSelectuser {
+    display: none;
+}
+
+.welcome {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99996;
+    transition: 0.5s cubic-bezier(0.1, 0.9, 0.2, 1);
+    background-color: rgb(24, 0, 82)
+}
+
+.welcome .usercontainer {
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    margin-left: -265px;
+    width: 530px;
+    height: 200px;
+    transition: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+
+.welcome .usercontainer .useravatar {
+    background-image: url(../../../img/avatar.png);
+    box-shadow: inset 0px 0px 0px 1px rgba(200, 200, 200, 0.2);
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome .usercontainer .username_s {
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
+    opacity: 0;
+}
+
+.welcome .usercontainer .username_l {
+    font-weight: 100;
+    color: white;
+    left: 220px;
+    top: 2px;
+    position: absolute;
+    font-size: 26px;
+}
+
+.welcome .usercontainer .welcomering {
+    transform: scale(0.7, 0.7);
+    margin-left: -22px;
+    margin-right: 16px;
+    position: absolute;
+    left: 240px;
+    top: 62px;
+    animation: fadeani 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.welcome .usercontainer .welcometext {
+    font-weight: 100;
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    top: 66px;
+    left: 280px;
+    white-space: nowrap;
+    animation: fadeani 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.welcome .usercontainer input {
+    display: none;
+}
+
+.welcome .usercontainer .passwordEnterButton {
+    display: none;
+}
+
+.welcome .usercontainer .exitToSelectuser {
+    display: none;
+}
+
+.welcome .usercontainer .email {
+    font-weight: 100;
+    left: 220px;
+    top: 36px;
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    animation: fadeani 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99996;
+    transition: 0.5s cubic-bezier(0.1, 0.9, 0.2, 1);
+    background-color: rgb(24, 0, 82)
+}
+
+.login .usercontainer {
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+    margin-left: -265px;
+    width: 530px;
+    height: 200px;
+    transition: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+
+.login .usercontainer .useravatar {
+    background-image: url(../../../img/avatar.png);
+    box-shadow: inset 0px 0px 0px 1px rgba(200, 200, 200, 0.2);
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.login .usercontainer .username_s {
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
+    opacity: 0;
+}
+
+.login .usercontainer .username_l {
+    font-weight: 100;
+    color: white;
+    left: 220px;
+    top: 2px;
+    position: absolute;
+    font-size: 26px;
+}
+
+.login .usercontainer .welcomering {
+    display: none;
+}
+
+.login .usercontainer .welcometext {
+    display: none;
+}
+
+.login .usercontainer input {
+    box-sizing: border-box;
+    position: absolute;
+    top: 70px;
+    left: 220px;
+    animation: fadeani 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.login .usercontainer .passwordEnterButton {
+    position: absolute;
+    top: 72px;
+    left: 470px;
+    height: 28px;
+    width: 28px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.login .usercontainer .passwordEnterButton span {
+    position: absolute;
+    left: 4px;
+    top: -1px;
+}
+
+.login .usercontainer .exitToSelectuser {
+    position: absolute;
+    left: -50px;
+    top: 10px;
+}
+
+.welcome #lock_powerbtn {
+    display: none;
+}
+
+#lock_powerbtn {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 38px;
+    right: 38px;
+    color: white;
+}
+
+#lock_powerbtn:active {
+    transform: scale(0.98, 0.98);
+}
+
+#lock_powerbtn p {
+    font-size: 26px;
+    margin: 0;
+    padding-top: 6px;
+    padding-left: 12px;
+}
+
+.login .usercontainer .email {
+    font-weight: 100;
+    left: 220px;
+    top: 36px;
+    position: absolute;
+    font-size: 16px;
+    color: white;
+    animation: fadeani 0.3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+
+
+.contextmenu {
+    border: 1px solid rgb(151, 151, 151);
+    padding: 2px 2px;
+    background-color: rgb(240, 240, 240);
+    position: fixed;
+    z-index: 99999;
+    display: none;
+}
+
+.contextmenu>.element {
+    padding: 1px 50px 1px 30px;
+    font-weight: 400;
+    white-space: nowrap;
+    font-size: 12px;
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 99;
+}
+
+.contextmenu>.element:hover {
+    background-color: rgba(120, 174, 229, 0.2);
+    border: 1px solid rgb(120, 174, 229);
+}
+
+.contextmenu>.element>.CheckMark {
+    position: absolute;
+    top: -1px;
+    width: 22px;
+    height: 22px;
+    left: -1px;
+    border: 1px solid rgb(38, 160, 218);
+    background: url(../../../img/shell/1068.png) rgba(38, 160, 218, 0.2);
+    background-position-x: 1px;
+}
+
+.contextmenu>.separator {
+    background-color: rgb(215, 215, 215);
+    width: calc(100% - 27px);
+    height: 1px;
+    margin-left: 27px;
+}
+
+.contextmenu>.verticalSeparator {
+    background-color: rgb(215, 215, 215);
+    width: 1px;
+    height: calc(100% - 4px);
+    position: absolute;
+    left: 29px;
+    top: 2px;
+}
+
+.contextmenu>.element>img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+.metrocontextmenucompact {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 5px 2px;
+    background-color: white;
+    position: fixed;
+    z-index: 99999;
+    display: none;
+}
+
+.metrocontextmenucompact .element {
+    padding: 1px 50px 1px 30px;
+    font-weight: 400;
+    white-space: nowrap;
+    font-size: 12px;
+    position: relative;
+}
+
+.metrocontextmenucompact .element:hover {
+    background-color: rgb(229, 229, 229);
+}
+
+.metrocontextmenucompact .childmenu {
+    left: 100%;
+    top: 0px;
+    border: 1px solid rgb(160, 160, 160);
+    padding: 5px 2px;
+    background-color: white;
+    position: absolute;
+    z-index: 99999;
+    display: none;
+}
+
+.metrocontextmenucompact>.element:hover>.childmenu {
+    display: block;
+}
+
+.metrocontextmenu {
+    border: 2px solid rgb(42, 42, 42);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    opacity: 0;
+    animation: start-window_ani cubic-bezier(0.1, 0.9, 0.2, 1) 0.1s forwards;
+    transform: translateY(-10px);
+}
+
+.metrocontextmenu>.element {
+    padding: 9px 50px 9px 20px;
+    font-weight: 600;
+    ;
+    white-space: nowrap;
+}
+
+.metrocontextmenu>.element:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+.metrocontextmenu>.element:active {
+    background-color: black;
+    color: white;
+}
+
+@keyframes start-window_ani {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes usercontainerAnim {
+    0% {transform: translateX(10px); opacity: 0}
+    100% {transform: translateX(0); opacity: 1}
+}
+
+#shutdownscreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(24, 0, 82);
+    z-index: 99999;
+    animation: fadeani 0.25s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    transition: 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+#shutdownscreen > h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 100;
+    font-size: 28px;
+}
+
+#shutdownscreen > h1 > .progress-ring {
+    display: inline-block;
+    vertical-align: -4px;
+    margin-right: 16px;
+    scale: 0.8;
+}

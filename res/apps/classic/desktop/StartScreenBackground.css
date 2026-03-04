@@ -1,0 +1,566 @@
+.StartScreenBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;top:0;
+    display: none;
+    animation: fadeani 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+    transition:0.5s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.StartScreenBackground > div {
+    display: none;
+}
+
+.StartScreenBackground .i20200-1 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: 50vh;
+}
+
+.StartScreenBackground .i20200-2 {
+    position: absolute;
+    left: calc(50vh * 2.186);
+    bottom: 0vh;
+    height: 50vh;
+}
+
+.StartScreenBackground .i20400-1 {
+    position: absolute;
+    left: 0;
+    top: -2vh;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20400-2 {
+    position: absolute;
+    left: calc(40vh * 3.49);
+    top: -2vh;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20400-3 {
+    position: absolute;
+    left: 36vh;
+    top: 0.3vh;
+    height: calc(40vh / 2.89);
+    opacity: 0.6;
+}
+
+.StartScreenBackground .i20400-4 {
+    position: absolute;
+    left: 157.78vh;
+    top: 4.4vh;
+    height: calc(40vh / 1.77);
+    opacity: 0.6;
+}
+
+.StartScreenBackground .i20400-5 {
+    position: absolute;
+    left: 252.3vh;
+    top: 4.3vh;
+    height: calc(40vh / 2.15);
+    opacity: 0.6;
+}
+
+.StartScreenBackground .i20400-6 {
+    position: absolute;
+    left: 122vh;
+    top: 14.3vh;
+    height: calc(40vh / 5.2);
+    opacity: 0.6;
+}
+
+.StartScreenBackground .i20400-7 {
+    position: absolute;
+    left: 0vh;
+    top: 16vh;
+    height: calc(40vh / 3.10);
+    opacity: 0.6;
+}
+
+.StartScreenBackground .i20400-8 {
+    position: absolute;
+    left: 116vh;
+    top: 33vh;
+    height: calc(40vh / 11.33);
+}
+
+.StartScreenBackground .i20400-9 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: calc(40vh / 1.75);
+}
+
+.StartScreenBackground .i20400-10 {
+    position: absolute;
+    left: calc(40vh / 1.75 * 6.03);
+    bottom: 0vh;
+    height: calc(40vh / 1.75);
+}
+
+.StartScreenBackground .i20500-5 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30vh;
+}
+
+.StartScreenBackground .i20500-6 {
+    position: absolute;
+    left: calc(30vh * 3.94);
+    top: 0;
+    height: 30vh;
+}
+
+.StartScreenBackground .i20500-7 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: 18vh;
+}
+
+.StartScreenBackground .i20500-8 {
+    position: absolute;
+    left: calc(18vh * 6.78);
+    bottom: 0vh;
+    height: 18vh;
+}
+
+.StartScreenBackground .i20600-5 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20600-6 {
+    position: absolute;
+    left: calc(40vh * 2.97);
+    top: 0;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20600-7 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: 9.5vh;
+}
+
+.StartScreenBackground .i20600-8 {
+    position: absolute;
+    left: calc(9.5vh * 12.5);
+    bottom: 0vh;
+    height: 9.5;
+}
+
+.StartScreenBackground .i20700-1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20700-2 {
+    position: absolute;
+    left: calc(40vh * 3.352);
+    top: 0;
+    height: 40vh;
+}
+
+.StartScreenBackground .i20700-7 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: 16vh;
+}
+
+.StartScreenBackground .i20700-8 {
+    position: absolute;
+    left: calc(16vh * 7.14);
+    bottom: 0vh;
+    height: 16vh;
+}
+
+.StartScreenBackground .i21100-1 {
+    position: absolute;
+    left: 0vw;
+    top: 0vh;
+    height: 40vh;
+}
+
+.StartScreenBackground .i21100-2 {
+    position: absolute;
+    left: calc(40vh * 2.59523809524);
+    top: 0vh;
+    height: 40vh;
+}
+
+.StartScreenBackground .i21200-3 {
+    position: absolute;
+    left: 0;
+    bottom: 0vh;
+    height: 25vh;
+}
+
+.StartScreenBackground .i21200-4 {
+    position: absolute;
+    left: calc(25vh * 5.33);
+    bottom: 0vh;
+    height: 25vh;
+}
+
+.StartScreenBackground .i21300-5 {
+    position: absolute;
+    left: 0vw;
+    top: 0vh;
+    width: 135vw;
+}
+
+.StartScreenBackground .i21000-10 {
+    position: absolute;
+    left: 0vw;
+    bottom: 0vh;
+    width: 2600px;
+    min-width: 100vw;
+    max-width: 160vw;
+}
+
+.StartScreenBackground .i21400-1 {
+    position: absolute;
+    right: 25vw;
+    bottom: 0vh;
+    height: 50vh;
+}
+
+.StartScreenBackground .i21400-2 {
+    position: absolute;
+    left: 75vw;
+    bottom: 0vh;
+    height: 50vh;
+}
+
+.StartScreenBackground .i21600-1 {
+    position: absolute;
+    left: -6vh;
+    bottom: 15vh;
+    height: 50vh;
+    animation: a21600-1 4s linear infinite;
+}
+
+.StartScreenBackground .i21600-2 {
+    position: absolute;
+    left: 4.8vh;
+    bottom: 52.4vh;
+    height: 4vh;
+    animation: a21600-2 4s linear infinite;
+}
+
+@keyframes a21600-1 {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(8vh);}
+    100% {transform: translateY(0);}
+}
+
+@keyframes a21600-2 {
+    0% {transform: translateY(0); opacity: 1;}
+    50% {transform: translateY(8vh); opacity: 0.5;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+
+.StartScreenBackground .i21600-3 {
+    position: absolute;
+    left: 3.2vh;
+    bottom: 5vh;
+    height: 10vh;
+    animation: a21600-2 4s linear infinite;
+}
+
+.StartScreenBackground .i21600-6 {
+    position: absolute;
+    left: 40vh;
+    top: 2.8vh;
+    height: 12vh;
+    animation: a21600-6 4s 0.2s linear infinite;
+}
+
+@keyframes a21600-6 {
+    0% {transform: rotateZ(0deg);}
+    50% {transform: rotateZ(180deg);}
+    100% {transform: rotateZ(360deg);}
+}
+
+.StartScreenBackground .i21600-7 {
+    position: absolute;
+    left: 51vh;
+    top: 0vh;
+    height: calc(12vh / 1.21);
+    animation: a21600-7 4s linear infinite;
+}
+
+@keyframes a21600-7 {
+    0% {transform: rotateZ(360deg);}
+    50% {transform: rotateZ(180deg);}
+    100% {transform: rotateZ(0deg);}
+}
+
+.StartScreenBackground .i21800-1 {
+    position: absolute;
+    right: 20vw;
+    top: 4vh;
+    height: 35vh;
+}
+
+.StartScreenBackground .i21800-2 {
+    position: absolute;
+    right: calc(20vw - 3.9vh);
+    top: 5.7vh;
+    height: 1.2vh;
+    animation: a21800-2 10s 0.3s ease infinite;
+    opacity: 0;
+}
+
+.StartScreenBackground .i21800-3 {
+    position: absolute;
+    right: calc(20vw - 2vh);
+    top: -1vh;
+    height: 4vh;
+    animation: a21800-3 10s 0.3s ease infinite;
+    opacity: 0;
+}
+
+.StartScreenBackground .i21800-4 {
+    position: absolute;
+    right: calc(20vw - 5vh);
+    top: 2vh;
+    height: 0.8vh;
+    animation: a21800-4 10s 0.3s ease infinite;
+    opacity: 0;
+}
+
+.StartScreenBackground .i21800-5 {
+    position: absolute;
+    right: calc(20vw - 5vh);
+    top: 4.5vh;
+    height: 2vh;
+    animation: a21800-5 10s 0.2s ease infinite;
+    opacity: 0;
+}
+
+.StartScreenBackground .i21800-6 {
+    position: absolute;
+    right: calc(20vw - 1.6vh);
+    top: 9.4vh;
+    height: 1vh;
+    animation: a21800-6 10s 0.2s ease infinite;
+    opacity: 0;
+}
+
+@keyframes a21800-2 {
+    0%{opacity: 0; transform: translateY(0.7vh);}
+    5%{opacity: 1; transform: translateY(0vh);}
+    95%{opacity: 1; transform: translateY(0vh);}
+    100%{opacity: 0; transform: translateY(-0.7vh);}
+}
+
+@keyframes a21800-3 {
+    0%{opacity: 0; transform: translateY(2vh);}
+    5%{opacity: 1; transform: translateY(0vh);}
+    95%{opacity: 1; transform: translateY(0vh);}
+    100%{opacity: 0; transform: translateY(-2vh);}
+}
+
+@keyframes a21800-4 {
+    0%{opacity: 0; transform: translateY(0.5vh);}
+    5%{opacity: 1; transform: translateY(0vh);}
+    95%{opacity: 1; transform: translateY(0vh);}
+    100%{opacity: 0; transform: translateY(-0.5vh);}
+}
+
+@keyframes a21800-5 {
+    0%{opacity: 0; transform: translateY(1vh);}
+    5%{opacity: 1; transform: translateY(0vh);}
+    95%{opacity: 1; transform: translateY(0vh);}
+    100%{opacity: 0; transform: translateY(-1vh);}
+}
+
+@keyframes a21800-6 {
+    0%{opacity: 0; transform: translateY(0.5vh);}
+    5%{opacity: 1; transform: translateY(0vh);}
+    95%{opacity: 1; transform: translateY(0vh);}
+    100%{opacity: 0; transform: translateY(-0.5vh);}
+}
+
+.StartScreenBackground .i22000-1 {
+    position: absolute;
+    right: 5vw;
+    top: -20vh;
+    height: 150vh;
+    opacity: 0;
+    animation: fadeani 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.StartScreenBackground .i22000-2 {
+    position: absolute;
+    right: 5vw;
+    top: -20vh;
+    height: 150vh;
+    animation: fadeani 1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.StartScreenBackground .i22000-3 {
+    position: absolute;
+    right: 5vw;
+    top: -20vh;
+    height: 150vh;
+    animation: fadeani 1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.StartScreenBackground .i22000-4 {
+    position: absolute;
+    right: 5vw;
+    top: -20vh;
+    height: 150vh;
+    opacity: 0;
+    animation: a22000-4 0.7s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes a22000-4 {
+    0% {opacity: 0;}
+    100% {opacity: 0.5;}
+}
+
+.StartScreenBackground .i22100-1 {
+    position: absolute;
+    left: 40vh;
+    top: 0vh;
+    height: 15vh;
+}
+
+.StartScreenBackground .i22100-2 {
+    position: absolute;
+    left: 40vh;
+    top: 0vh;
+    height: 15vh;
+}
+
+.StartScreenBackground .i22100-4 {
+    position: absolute;
+    left: 61vh;
+    bottom: 0vh;
+    height: 8vh;
+}
+
+.StartScreenBackground .i22100-9 {
+    position: absolute;
+    left: 73vh;
+    top: 0vh;
+    height: calc(15vh / 1.53);
+    animation: a22100-9 6s ease infinite;
+}
+
+.StartScreenBackground .i22100-8 {
+    position: absolute;
+    left: 80vh;
+    top: 0vh;
+    height: calc(15vh / 1.53);
+    animation: a22100-9 6s 0.2s ease infinite;
+}
+
+@keyframes a22100-9 {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(-3vh);}
+    100% {transform: translateX(0);}
+}
+
+.StartScreenBackground .i22100-3 {
+    position: absolute;
+    left: 180vh;
+    top: 0vh;
+    height: calc(15vh * 2.15);
+}
+
+.StartScreenBackground .i22100-5 {
+    position: absolute;
+    left: 200vh;
+    bottom: 0vh;
+    height: calc(8vh * 1.27);
+}
+
+.StartScreenBackground .i22100-6 {
+    position: absolute;
+    left: 191.95vh;
+    top: 5.2vh;
+    height: calc(15vh * 2.15 / 2.92);
+    animation: a22100-6 10s linear infinite;
+}
+
+@keyframes a22100-6 {
+    0% {opacity: 1;}
+    4.7% {opacity: 1;}
+    4.9% {opacity: 0;}
+    5.1% {opacity: 1;}
+    7.7% {opacity: 1;}
+    7.9% {opacity: 0;}
+    8.1% {opacity: 1;}
+    9% {opacity: 1;}
+}
+
+.StartScreenBackground .i22100-7 {
+    position: absolute;
+    left: 91.89vh;
+    bottom: 5.5vh;
+    height: calc(8vh / 12.83);
+    animation: a22100-6 10s 2s linear infinite;
+}
+
+.StartScreenBackground .i22100-15 {
+    position: absolute;
+    left: 61vh;
+    bottom: 10vh;
+    height: calc(8vh / 7.7);
+    animation: a22100-6 10s 2s linear infinite;
+}
+
+.StartScreenBackground .i22100-16 {
+    position: absolute;
+    left: 97.3vh;
+    bottom: 3vh;
+    height: calc(8vh / 4.27);
+    animation: a22100-6 10s 4s linear infinite;
+}
+
+.StartScreenBackground .i22100-10 {
+    position: absolute;
+    left: 49vh;
+    top: 10vh;
+    height: calc(15vh / 9);
+    animation: a22100-6 10s 6s linear infinite;
+}
+
+.StartScreenBackground .i22100-11 {
+    position: absolute;
+    left: 55.7vh;
+    top: 3vh;
+    height: calc(15vh / 8);
+    animation: a22100-6 10s 6.2s linear infinite;
+}
+
+.StartScreenBackground .i22100-12 {
+    position: absolute;
+    left: 96.3vh;
+    top: 10.333vh;
+    height: calc(15vh / 8);
+    animation: a22100-6 10s 6.2s linear infinite;
+}
+
+.StartScreenBackground .i22100-13 {
+    position: absolute;
+    left: 178.6vh;
+    top: 0.6vh;
+    height: calc(15vh / 7.4);
+    animation: a22100-6 10s 7s linear infinite;
+}

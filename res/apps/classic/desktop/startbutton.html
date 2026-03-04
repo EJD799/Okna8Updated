@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            .startbutton {
+                width: 100vw;
+                height: 40px;
+                position: fixed;
+                opacity: 0;
+                z-index: 90000;
+                transition: 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+            }
+
+            .startbutton:hover {
+                opacity: 1;
+            }
+
+            .startbuttonback {
+                width: 100vw;
+                height: 40px;
+                background-color: rgb(70, 23, 181);
+                position: fixed;
+                z-index: 90001;
+            }
+
+            .startbuttonhighlight {
+                height: 40px;
+                width: 100vw;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+                position: fixed;
+                z-index: 90002;
+                transform: translateX(-50px);
+            }
+
+            @keyframes startbutton-highlight {
+                100% {
+                    transform: translateX(50px);
+                }
+            }
+
+            .startbutton:hover > .startbuttonhighlight {
+                animation: startbutton-highlight 1s 0.2s ease forwards;
+            }
+
+            .startbuttonmasknormalonstart {
+                width: 10px;
+                height: 10px;
+                position: fixed;
+                z-index: 90003;
+            }
+
+            .startbuttonmasknormal {
+                width: 100vw;
+                height: 40px;
+                position: fixed;
+                z-index: 90003;
+            }
+
+            .startbuttonmaskhover {
+                width: 100vw;
+                height: 40px;
+                background-image: url(../../../img/desktop/startbuttonmaskhover.png);
+                position: fixed;
+                z-index: 90004;
+                opacity: 1;
+                left: 50vw;
+                transform: translateX(-50%);
+            }
+
+            .startbuttonmaskactive {
+                width: 100vw;
+                height: 40px;
+                background-image: url(../../../img/desktop/startbuttonmaskactive.png);
+                position: fixed;
+                z-index: 90005;
+                opacity: 0;
+                left: 50vw;
+                transform: translateX(-50%);
+            }
+
+            .scale150 .startbuttonmaskhover {
+                background-image: url(../../../img/desktop/startbuttonmaskhover150.png);
+                background-size: contain;
+            }
+
+            .scale150 .startbuttonmaskactive {
+                background-image: url(../../../img/desktop/startbuttonmaskactive150.png);
+                background-size: contain;
+            }
+
+            .startbutton:active > .startbuttonmaskactive {
+                opacity: 1;
+            }
+        </style>
+        <script src="../../../script/jquery.js"></script>
+    </head>
+    <body>
+        <div class="startbutton">
+            <div class="startbuttonback"></div>
+            <div class="startbuttonhighlight"></div>
+            <div class="startbuttonmaskhover"></div>
+            <div class="startbuttonmaskactive"></div>
+        </div>
+        <script>
+            var startopened = true
+            var appinfocus = true
+            $(document).click(() => {
+                if (appinfocus == true) {
+                    window.parent.postMessage('openstart', '*')
+                } else if (startopened == true) {
+                    window.parent.postMessage('opendesktop', '*')
+                } else {
+                    window.parent.postMessage('openstart', '*')
+                }
+            })
+            window.onmessage = () => {
+                if (event.data == 'desktop-opened') {
+                    startopened = null
+                    appinfocus = null
+                }
+                if (event.data == 'start-opened') {
+                    startopened = true
+                    appinfocus = null
+                }
+                if (event.data == 'app-opened') {
+                    startopened = null
+                    appinfocus = true
+                }
+                if (event.data == 'updColor') {
+                    setTimeout(() => {
+                        $('.startbuttonback').css('background-color', 'rgb(' + localStorage.getItem('OKNA8_user_' + sessionStorage.getItem('OKNA8_sessionUser') + '_color_foreground') + ')')
+                    }, 100)
+                }
+            }
+
+            $(document).ready(() => {
+                if (localStorage.getItem('OKNA8_scale150') == 'true') {
+                    $('body').addClass('scale150')
+                }
+                    $('.startbuttonback').css('background-color', 'rgb(' + localStorage.getItem('OKNA8_user_' + sessionStorage.getItem('OKNA8_sessionUser') + '_color_foreground') + ')')
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                    $('.startbuttonmaskhover').css('display', 'none')
+                    $('.startbuttonback').css('display', 'none')
+                    $('.startbuttonhighlight').css('display', 'none')
+                    $('.startbuttonmaskactive').css('background-color', 'rgb(' + localStorage.getItem('OKNA8_user_' + sessionStorage.getItem('OKNA8_sessionUser') + '_color_foreground') + ')')
+                }
+            })
+        </script>
+    </body>
+</html>

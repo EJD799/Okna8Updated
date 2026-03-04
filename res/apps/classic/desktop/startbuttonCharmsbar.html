@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style>
+    body {
+        margin: 0;
+    }
+
+    .startbutton {
+        width: 100vw;
+        height: 100px;
+        position: fixed;
+        opacity: 1;
+        z-index: 90000;
+        transition: 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+        perspective: 1000px;
+    }
+
+    .startbuttonback {
+        width: 100vw;
+        height: 100px;
+        background-color: rgb(70, 23, 181);
+        position: fixed;
+        z-index: 90001
+    }
+
+    .startbuttonhighlight {
+        height: 100px;
+        width: 50vw;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+        position: fixed;
+        z-index: 90002;
+        transform: translateX(-100vw);
+        animation: startbutton-highlight 1s ease forwards;
+    }
+
+    @keyframes startbutton-highlight {
+        0% {
+            transform: translateX(5vw);
+        }
+        100% {
+            transform: translateX(100vw);
+        }
+    }
+
+    .startbutton:hover > .startbuttonmaskhover {
+        opacity: 1;
+    }
+
+    .startbuttonmasknormalonstart {
+        width: 10px;
+        height: 10px;
+        position: fixed;
+        z-index: 90003;
+    }
+
+    .startbuttonmasknormal {
+        width: 100vw;
+        height: 100px;
+        background-image: url(../../../img/Charmsbar/StartButtonMask.png);
+        position: fixed;
+        z-index: 90003;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .startbuttonmaskhover {
+        width: 100vw;
+        height: 100px;
+        background-image: url(../../../img/Charmsbar/StartButtonMaskHover.png);
+        position: fixed;
+        z-index: 90004;
+        opacity: 0;
+        left: 50vw;
+        transform: translateX(-50%);
+        transition: 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+        transform-origin: right center;
+    }
+
+    .startbuttonmaskactive {
+        width: 100vw;
+        height: 100px;
+        background-image: url(../../../img/Charmsbar/StartButtonMaskActive.png);
+        position: fixed;
+        z-index: 90005;
+        opacity: 0;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .startbutton:active>.startbuttonmaskactive {
+        opacity: 1;
+    }
+
+    .startbutton > p {
+        color: white;
+        font-size: 16px;
+        font-family: 'segoeui';
+        position: absolute;
+        top: 46px;
+        z-index: 99999;
+        left: 50%;
+        transform: translateX(-50%);        
+    }
+</style>
+<link rel="stylesheet" href="../../../style/fonts.css">
+<script src="../../../script/jquery.js"></script>
+<body>
+    <div class="startbutton">
+        <div class="startbuttonback"></div>
+        <div class="startbuttonhighlight"></div>
+        <div class="startbuttonmasknormal"></div>
+        <div class="startbuttonmaskhover"></div>
+        <div class="startbuttonmaskactive"></div>
+        <p>Пуск</p>
+    </div>
+    <script>
+        var startopened = true
+        var appinfocus = true
+        $(document).click(() => {
+            if (appinfocus == true) {
+                window.parent.postMessage('openstart', '*')
+            } else if (startopened == true) {
+                window.parent.postMessage('opendesktop', '*')
+            } else {
+                window.parent.postMessage('openstart', '*')
+            }
+        })
+        window.onmessage = () => {
+            if (event.data == 'desktop-opened') {
+                startopened = null
+                appinfocus = null
+            }
+            if (event.data == 'start-opened') {
+                startopened = true
+                appinfocus = null
+            }
+            if (event.data == 'app-opened') {
+                startopened = null
+                appinfocus = true
+            }
+            if (event.data == 'updColor') {
+                setTimeout(() => {
+                    $('.startbuttonback').css('background-color', 'rgb(' + localStorage.getItem('OKNA8_user_' + sessionStorage.getItem('OKNA8_sessionUser') + '_color_foreground') + ')')
+                }, 100);
+            }
+            if (event.data == 'updAnim') {
+                $('.starthighlight').css('display', 'none')
+                setTimeout(() => {
+                    $('.starthighlight').css('display', 'block')
+                }, 1);
+            }
+            if (event.data.startsWith('LocalizedLabel|')) {
+                $('p').html(event.data.substring(15))
+            }
+        }
+    
+             
+        $(document).ready(()=>{
+            if (localStorage.getItem('OKNA8_scale150') == 'true') {
+                $('body').addClass('scale150')
+            }
+            $('.startbuttonback').css('background-color', 'rgb(' + localStorage.getItem('OKNA8_user_' + sessionStorage.getItem('OKNA8_sessionUser') + '_color_foreground') + ')')
+        })
+    </script>
+</body>

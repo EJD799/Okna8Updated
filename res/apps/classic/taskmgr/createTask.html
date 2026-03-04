@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Создание задачи</title>
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/shellstyle.css">
+        <link rel="stylesheet" href="../run/style.css">
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="../run/script.js"></script>
+    </head>
+    <body> 
+        <p style="position: absolute; top:24px; left: 70px; margin-top: 0; margin-right: 20px;">Введите имя программы, папки, документа или ресурса Интернета, и Windows откроет их.</p>
+        <p style="position: absolute; top:75px; left: 12px; margin-top: 0;">Открыть:</p>
+        <input autocomplete="off" style="position: absolute; top:70px; left: 70px; margin-top: 0; width: 310px;" type="text" id="Input">
+        <img src="taskmgr.png" alt="" style="width: 32px; position:absolute; left:14px; top:24px">
+        <div class="Buttons" style="width: calc(100vw - 24px); padding-right: 24px;">
+            <button>Обзор...</button>
+            <button onclick="killWindow()">Отмена</button>
+            <button disabled id="OKbtn" onclick="ExecuteProgram()">ОК</button>
+        </div>        
+    </body>
+</html>

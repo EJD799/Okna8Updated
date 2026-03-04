@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator Test</title>
+        <link rel="stylesheet" href="../../../style/fonts.css">
+        <link rel="stylesheet" href="../../../style/shellstyle.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="../../../script/jquery.js"></script>
+        <script src="../../../script/ConnectScript.js"></script>
+        <script src="../../../script/WindowsCommunication.js"></script>
+        <script src="script.js"></script>
+        <script src="calc.js"></script>
+    </head>
+    <body>
+        <div class="menubar">
+            <div class="element" id="MenuBarElement_view" onclick="MenuBar('view')">Вид</div>
+            <div class="element" id="MenuBarElement_edit" onclick="MenuBar('edit')">Правка</div>
+            <div class="element" id="MenuBarElement_help" onclick="MenuBar('help')">Справка</div>
+        </div>
+        <div class="calcPage" id="CalcPageStandart">
+            <div class="output">
+                <div class="string">0</div>
+                <div class="stringSmall"></div>
+            </div>
+            <div class="row row1">
+                <button>MC</button>
+                <button>MR</button>
+                <button>MS</button>
+                <button>M+</button>
+                <button>M-</button>
+            </div>
+            <div class="row row2">
+                <button onclick="AddSym('d')">d</button>
+                <button onclick="AddSym('CE')">CE</button>
+                <button onclick="AddSym('C')">C</button>
+                <button onclick="AddSym('+-')">±</button>
+                <button>√</button>
+            </div>
+            <div class="row row3">
+                <button onclick="AddSym(7)">7</button>
+                <button onclick="AddSym(8)">8</button>
+                <button onclick="AddSym(9)">9</button>
+                <button onclick="AddSym('/')">/</button>
+                <button>%</button>
+            </div>
+            <div class="row row4">
+                <button onclick="AddSym(4)">4</button>
+                <button onclick="AddSym(5)">5</button>
+                <button onclick="AddSym(6)">6</button>
+                <button onclick="AddSym('*')">*</button>
+                <button>1/x</button>
+            </div>
+            <div class="row row5">
+                <button onclick="AddSym(1)">1</button>
+                <button onclick="AddSym(2)">2</button>
+                <button onclick="AddSym(3)">3</button>
+                <button onclick="AddSym('-')">-</button>
+                <button onclick="AddSym('=')">=</button>
+            </div>
+            <div class="row row6">
+                <button onclick="AddSym(0)">0</button>
+                <button onclick="AddSym(',')">,</button>
+                <button onclick="AddSym('+')">+</button>
+            </div>
+        </div>
+        <script>      
+            var WindowID
+            var LOCALE_winver = []
+            
+            ConnectScript('../../../localization/' + localStorage.getItem('OKNA8_locale') + '/apps/classic/calc.js')
+            ConnectScript('MenuBar.js')
+
+            window.addEventListener('message', function (event) {
+                if (event.data.startsWith('YourID-')) {
+                    WindowID = Number(event.data.replace('YourID-', ''))
+                    sendToTop('SetWindowIcon' + WindowID + '|' + 'apps/classic/calc/icon.png')
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+body {
+    background-color: white;
+}
+
+.properties-tabs {
+    top: 24px;
+    left: 2px;
+}
+
+.properties-tabs .tab {
+    flex:none;
+    padding: 1px 4px;
+}
+
+.properties-content {
+    width: 100vw;
+    height: calc(100vh - 45px);
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+    position: absolute;
+    left:0;top:44px;
+}
+
+.bottombar {
+    width: 100vw;
+    height: 48px;
+    border-top: rgb(172,172,172) 1px solid;
+    position: absolute;
+    left:0;bottom:0;
+}
+
+.bottombar > button {
+    float: right;
+    margin: 12px;
+}
+
+.processList {
+    width: 100vw;
+    margin-top: 12px;
+    height: calc(100vh - 108px);
+    border-top: rgb(172,172,172) 1px solid;
+    padding-top: 24px;
+}
+
+.processList > .process {
+    width: calc(100vw - 4px);
+    height: 17px;
+    border: 1px solid transparent;
+    margin: 0px 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.processList > .process:hover {
+    border: 1px rgb(112,192,231) solid;
+    background-color: rgba(112,192,231,0.2);
+}
+
+.processList > .process.active {
+    border: 1px rgb(112,192,231) solid;
+    background-color: rgba(112,192,231,0.2);
+}
+
+.processList > .process > table {
+    font-size: 12px;
+    border-spacing: 0;
+}
+
+.processList > .process > table tr > td:nth-child(1) {
+    width: 19px;
+    padding: 0;
+}
+
+.processList > .process > table tr > td:nth-child(1) > img {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+}
+
+.processList > .process > table tr > td p {
+    margin: 0;
+    margin-top: -4px;
+    padding-left: 2px;
+}
+
+.processList > .process > table tr > td:nth-child(2) {
+    width: 200px;
+}
+
+.processList > .process > table tr > td:nth-child(2) p {
+    white-space: nowrap;
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.processList > .process > table tr > td:nth-child(3) {
+    width: 100px;
+}
+
+.processList > .process > table tr > td:nth-child(4) {
+    width: 300px;
+}
+
+.processList > .process > table tr > td:nth-child(4) p {
+    white-space: nowrap;
+    width: 290px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.processListHeader {
+    width: 100vw;
+    height: 22px;
+    border-bottom: rgb(232,241,251) 1px solid;
+    position: absolute;
+    left:0;top:12px;
+    background-color: white;
+}
+
+.processListHeader > table tr > td:nth-child(1) {
+    width: 221px;
+}
+
+.processListHeader > table tr > td:nth-child(2) {
+    width: 100px;
+}
+
+.processListHeader > table tr > td:nth-child(3) {
+    width: 300px;
+}
+
+.processListHeader > table tr > td {
+    padding: 0;
+}
+
+.processListHeader > table tr > td p {
+    margin: 2px 8px;
+}
+
+.line1 {
+    left: 215px;
+    top: 34px;
+    height: calc(100% - 82px);
+    width: 1px;
+    position: absolute;
+    background-color: rgb(232,241,251);
+}
+
+.line2 {
+    left: 323px;
+    top: 34px;
+    height: calc(100% - 82px);
+    width: 1px;
+    position: absolute;
+    background-color: rgb(232,241,251);
+}

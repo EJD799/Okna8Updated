@@ -1,0 +1,22 @@
+#NotepadTextarea {
+    width: calc(100vw - 6px);
+    height: calc(100vh - 26px);
+    min-width: calc(100vw - 6px);
+    min-height: calc(100vh - 26px);
+    max-width: calc(100vw - 6px);
+    max-height: calc(100vh - 26px);
+    position: fixed;
+    left:0;top:20px;
+    border: 1px solid rgb(86,157,229);
+    font-family: monospace;
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+#NotepadTextarea:focus {
+    outline: none;
+}
+
+#NotepadTextarea::-webkit-scrollbar-thumb:hover {
+    cursor: default;
+}
